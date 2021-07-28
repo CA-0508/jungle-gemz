@@ -1,0 +1,48 @@
+.cart-contents {
+
+  .cart-empty-text {
+    margin: ($line-global*5) 0;
+  }
+
+  .text-link {
+    display:none;
+  }
+
+  .cart-content-title {
+    font-family: $headline-font;
+    @include text-outline;
+    text-align: right;
+
+    margin-bottom: $line-global/2;
+  }
+
+  .subtotal-line {
+    padding: $line-global/2 $line-global;
+    background-color: $accent;
+    color: $text-color;
+    border: $standard-border;
+    @include flex-space-between;
+  }
+
+  .update-button {
+    display: inline-block;
+    width: auto;
+    margin-top: $line-global;
+    margin-bottom: $line-global;
+  }
+
+  .cart-buttons {
+    text-align: right;
+  }
+
+  .currency-note {
+    font-size: $type-body-meta;
+    text-align: left;
+    margin-top: $line-global;
+  }
+
+  .keep-shopping {
+    display: table;
+    margin: 0 auto;
+  }
+}

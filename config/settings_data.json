@@ -1,0 +1,35 @@
+{
+  "current": {
+    "sections": {
+      "Announcement bar": {
+        "type": "announcement"
+      },
+      "Slideshow": {
+        "type": "slide"
+      },
+      "Content": {
+        "type": "collection",
+        "type": "image_text",
+        "type": "image_text"
+      },
+      "Instagram feed": {
+        "type": "branded",
+        "type": "instafeed_app"
+      },
+      "Custom content": {
+        "type": "text",
+        "type": "image"
+      }
+    },
+    "content_for_index": [
+      "Announcement bar",
+      "Slideshow",
+      "Content",
+      "Instagram feed",
+      "Custom content"
+    ]
+  },
+  "presets": {
+    "Default": { }
+  }
+}

@@ -1,0 +1,12 @@
+<div class="product-more">
+
+  <div class="collection-title-tag">
+    <h6>{{ 'product.more.title' | t }}</h6>
+    <!-- <p>{{ 'product.more.vendor' | t: vendor: product.vendor }}</p> -->
+  </div>
+  <div class="collection-content wrapper">
+    <div class="vr-line"></div>
+    {% include 'collection-list' with collection: collection, content: false, exclude: exclude, title: 'You might also like...', show_button: true %}
+  </div>
+
+</div>

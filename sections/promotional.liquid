@@ -1,0 +1,253 @@
+{% schema %}
+  {
+    "name": "t:sections.promotional.name",
+    "class": "promo-content-section",
+    "blocks": [
+      {
+        "type": "popup",
+        "name": "t:sections.promotional.blocks.popup.name",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_popup",
+            "label": "t:sections.promotional.blocks.popup.settings.show_popup.label",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "popup_bg_image",
+            "label": "t:sections.promotional.blocks.popup.settings.image_picker.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_popup_bg",
+            "label": "t:sections.promotional.blocks.popup.settings.show_popup_bg.label",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "popup_title",
+            "label": "t:sections.promotional.blocks.popup.settings.text.label",
+            "default": "Get the 411"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content",
+            "label": "t:sections.promotional.blocks.popup.settings.textarea.label"
+          },
+          {
+            "id": "show_button",
+            "type": "checkbox",
+            "label": "t:sections.promotional.blocks.popup.settings.show_button.label",
+            "default": true
+          },
+          {
+            "id": "button_url",
+            "type": "url",
+            "label": "t:sections.promotional.blocks.popup.settings.button_url.label"
+          },
+          {
+            "id": "button_text",
+            "type": "text",
+            "label": "t:sections.promotional.blocks.popup.settings.button_text.label",
+            "placeholder": "Sign Me Up"
+          }
+        ]
+      },
+      {
+        "type": "newsletter",
+        "name": "Newsletter",
+        "settings": [
+          {
+            "type": "text",
+            "id": "section_title",
+            "label": "Heading",
+            "default": "Subscribe to our newsletter"
+          },
+          {
+            "type": "richtext",
+            "id": "subheading",
+            "label": "Subheading",
+            "default": "<p>Promotions, new products and sales. Directly to your inbox.</p>"
+          },
+          {
+            "id": "show_background",
+            "type": "checkbox",
+            "label": "Show Background",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Promotional",
+        "category": "Promo Content",
+        "blocks": [
+          {
+            "type": "popup",
+            "settings": {
+              "popup_title": "Get the 411",
+              "button_url": "#"
+            }
+          },
+          {
+            "type": "newsletter",
+            "settings": {
+              "show_background": true
+            }
+          }
+        ]
+      }
+    ]
+  }
+
+{% endschema %}
+
+<div class="promo-wrap">
+  {% for block in section.blocks %}
+    <div class="promo-content-{{ block.type }}" {{ block.shopify_attributes }}>
+      {% case block.type %}
+        {% when 'popup' %}
+          {% if block.settings.show_popup != false %}
+            <div class="modal popup-wrap">
+
+              {% if block.settings.show_popup_bg != false %}
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}" class="popup-bg-image">
+              {% endif %}
+
+              <div class="popup-contents">
+                <h3>{{ block.settings.popup_title }}</h3>
+
+                <p>{{ block.settings.popup_content }}</p>
+
+                {% comment %} form starts {% endcomment %}
+                {% assign formId = 'Popup_' | append: section.id %}
+                {% form 'customer', id: formId, novalidate: 'novalidate', class: 'popup-form form-single-field' %}
+                  {% if form.posted_successfully? %}
+                    <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                      {{ 'general.newsletter_form.confirmation' | t }}
+                    </p>
+                  {% endif %}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="form-row">
+                    <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                      <input type="text" name="contact[first_name]" id="{{ formId }}-first_name"
+                        class="input-group__field{% if form.errors %} input--error{% endif %}"
+                        value="{{ 'contact.form.first_name' | t }}"
+                        placeholder="{{ 'contact.form.first_name' | t | upcase }}"
+                        aria-label="First Name"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-first_name-error"
+                          data-form-status
+                        {% endif %}
+                        >
+                    </div>
+                    <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                      <input type="email" name="contact[email]" id="{{ formId }}-email"
+                        class="input-group__field{% if form.errors %} input--error{% endif %}"
+                        value="{{ 'contact.form.email' | t  }}"
+                        placeholder="{{ 'contact.form.email' | t | upcase }}"
+                        aria-label="Email Address"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-email-error"
+                          data-form-status
+                        {% endif %}
+                        >
+                    </div>
+                  </div>
+
+                  <span class="input-group__btn">
+                    <button type="submit" class="button-cta" name="commit">
+                      {{ block.settings.button_text }}
+                    </button>
+                  </span>
+
+                  {% if form.errors contains 'email' %}
+                    <span id="{{ formId }}-email-error" class="input-error-message">
+                      <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                      {% include 'icon-error' %}
+                      <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                    </span>
+                  {% endif %}
+                {% endform %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        {% when 'newsletter' %}
+          <div class="newsletter-wrap wrapper">
+            <div class="section-header">
+              {% if block.settings.section_title != blank %}
+                <h3 class="h2">{{ block.settings.section_title | escape }}</h3>
+              {% endif %}
+              {% if block.settings.subheading != blank %}
+                <div class="rte">{{ block.settings.subheading }}</div>
+              {% endif %}
+            </div>
+
+            {% comment %} form starts {% endcomment %}
+            {% assign formId = 'Contact_' | append: section.id %}
+            {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+              {% if form.posted_successfully? %}
+                <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                  {{ 'general.newsletter_form.confirmation' | t }}
+                </p>
+              {% endif %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                <input type="email"
+                  name="contact[email]"
+                  id="{{ formId }}-email"
+                  class="input-group__field{% if form.errors %} input--error{% endif %}"
+                  value="{{ 'contact.form.email' | t }}"
+                  placeholder="{{ 'contact.form.email' | t | upcase }}"
+                  aria-label="Email Address"
+                  aria-required="true"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  {% if form.errors %}
+                    aria-invalid="true"
+                    aria-describedby="{{ formId }}-email-error"
+                    data-form-status
+                  {% endif %}
+                  >
+                <button type="submit" class="btn" name="commit">
+                  Send
+                </button>
+              </div>
+              {% if form.errors contains 'email' %}
+                <span id="{{ formId }}-email-error" class="input-error-message">
+                  <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                  {% comment %}{% include 'icon-error' %}{% endcomment %}
+                  <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                </span>
+              {% endif %}
+            {% endform %}
+          </div>
+
+          {% comment %} 
+          {% form 'customer' %}
+            <div class="password">
+              <label for="email">Password</label>
+              <input type="email" name="contact[email]" />
+            </div>
+
+            <div class="submit">
+              <input type="submit" value="Sign up" />
+            </div>
+          {% endform %}
+          {% endcomment %}
+      {% endcase %}
+    </div>
+  {% endfor %}
+</div>

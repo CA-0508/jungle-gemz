@@ -1,0 +1,29 @@
+#page-search {
+
+  .search-form-area{
+    width: 50vw;
+
+    #search-form-wrap {
+      width: 100%;
+    }
+
+    .results-inner {
+      grid-column: 1/10;
+      width: 100%;
+    }
+
+    #search-results {
+      margin-top: $offset-global;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .results-grid {
+      margin-top: $offset-global;
+    }
+
+    &.search-performed {
+      max-height: 600px;
+    }
+  }
+
+}

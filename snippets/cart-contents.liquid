@@ -1,0 +1,52 @@
+<div class="cart-contents">
+  <div class="cart-content-top">
+    <a class="text-link js-cart-close">close</a>
+    {% if cart.item_count > 0 %}
+      <h4 class="cart-content-title">{{ 'cart.filled.content' | t }}</h4>
+    {% else %}
+      <h4 class="cart-content-title">{{ 'cart.empty.content' | t }}</h4>
+    {% endif %}
+  </div>
+  {% if cart.item_count > 0 %}
+    <form action="/cart" method="post" novalidate>
+      <fieldset id="cart-fieldset" class="js-cart-fieldset">
+        <div class="cart-lines">
+          {% for item in cart.items %}
+            {% include 'line-item' %}
+          {% endfor %}
+        </div>
+
+        <div class="cart-totals">
+          <!-- <div class="extra-items">
+            {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+            {{ item.line_price | money }}
+            {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
+          </div> -->
+
+          <div class="subtotal-line">
+            <h6>{{ 'cart.filled.subtotal' | t }}</h6>
+            <span class="price">{{ cart.total_price | money }}</span>
+          </div>
+
+          {% comment %}
+            {% if template != 'cart' %}
+              <button class="button-cta" type="submit" name="cart">{{ 'cart.filled.button' | t }}</button>
+              {% else %}
+            {% endif %}
+          {% endcomment %}
+          <div class="cart-buttons">
+            <button class="update-button" type="submit" name="update">{{ 'cart.filled.update' | t }}</button>
+            <button class="button-cta" type="submit" name="checkout">{{ 'cart.filled.button' | t }}</button>
+          </div>
+        </div>
+
+        <p class="currency-note js-cart-currency-note">
+          {{ 'cart.filled.currency_note_html' | t: currency: shop.currency }}
+        </p>
+      </fieldset>
+    </form>
+  {% else %}
+    <p class="cart-empty-text ta-center">{{ 'cart.empty.text' | t }}</p>
+    <a href="/" class="button keep-shopping js-keep-shopping">{{ 'cart.empty.button' | t }}</a>
+  {% endif %}
+</div>

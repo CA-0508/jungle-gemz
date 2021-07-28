@@ -1,0 +1,77 @@
+{% schema %}
+  {
+    "name": "Gallery",
+    "class": "gallery-section",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title",
+        "default": "Our Community"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "photo",
+        "name": "Photo",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          },
+          {
+            "id": "photo_description",
+            "type": "textarea",
+            "label": "Photo Description"
+          },
+          {
+            "id": "link",
+            "type": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Image",
+        "name": "Gallery",
+        "settings": {
+          "title": "Our Community"
+        },
+        "blocks": [
+          {
+            "type": "photo",
+            "settings": {
+              "photo_description": "A short description of the photo.",
+              "link": "#"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="gallery-wrap">
+  {% for block in section.blocks %}
+    <div class="grid masonary">
+      <div class="gallery-container" {{ block.shopify_attributes }} >
+        {% if block.settings.link != blank %}
+        <a href="{{ block.settings.link }}"></a>
+        {% endif %}
+
+        {% if block.settings.photo_description != blank %}
+        <p>{{ block.settings.photo_description }}</p>
+        {% endif %}
+
+        {% if block.settings.image != blank %}
+          <div class="gallery-image">
+            <img src=" {{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.image.alt }}">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,24 @@
+.search-form {
+  position: relative;
+
+  #search-term {
+    @include reset-input;
+    display: block;
+    @extend .p-large;
+    width: 100%;
+    padding: $line-global 0;
+    border-bottom: $standard-border;
+    color: $white;
+
+    &:focus {
+      border-bottom-color: $white;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    bottom: $line-global/2;
+    width: auto;
+  }
+}

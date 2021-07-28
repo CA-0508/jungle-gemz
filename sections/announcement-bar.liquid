@@ -1,0 +1,72 @@
+{% schema %}
+  {
+    "name": "t:sections.announcement-bar.name",
+    "class": "announcement-section",
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "t:sections.announcement-bar.blocks.announcement.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "message",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.message.label"
+          },
+          {
+            "type": "text",
+            "id": "code",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.code.label",
+            "info": "Place your discount and special codes here"
+          },
+          {
+            "type": "select",
+            "id": "color_scheme",
+            "options": [
+              {
+                "value": "light",
+                "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
+              },
+              {
+                "value": "inverse",
+                "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
+              },
+              {
+                "value": "accent",
+                "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
+              },
+              {
+                "value": "ruby",
+                "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__4.label"
+              },
+              {
+                "value": "moon_stone",
+                "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__5.label"
+              }
+            ],
+            "default": "light",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.label"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<div id="announcement-wrap">
+  <div class="announcement-bar" data-section-id="announcement" data-section-type="announcement" {{ block.shopify_attributes }}>
+    {% for block in section.blocks %}
+        <div class="announcement-bar_inner color-{{ block.settings.color_scheme }}" role="region" aria-label="{{ 'sections.header.announcement' | t }}">
+          <div class="announcement-bar_content">
+            <p class="announcement-bar_message">
+              {{ block.settings.message | escape }}
+
+              {% if block.settings.code != blank %}
+                <span class="hr-line-announcement"></span>
+                {{ block.settings.code }}
+              {% endif %}
+            </p>
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>

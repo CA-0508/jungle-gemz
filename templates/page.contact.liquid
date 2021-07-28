@@ -1,0 +1,36 @@
+<div id="page" class="wrapper valign-center">
+  <div class="page-inner">
+    <div class="page-content">
+      <div class="display-title">
+        <div class="overline">send an email</div>
+        <div class="vr-line"></div>
+        <h3>info@junglegemz.com</h3>
+      </div>
+
+      <div class="contact-form-contents">
+        <div class="display-title">
+          <div class="overline">fill out the inquiry form</div>
+          <div class="vr-line"></div>
+        </div>
+
+        <div class="page-content">{{ page.content }}</div>
+
+        {% include 'contact-form' %}
+      </div>
+
+      <div class="display-title social-display-wrap">
+        <div class="overline">follow us</div>
+        <div class="vr-line"></div>
+        <div class="peek-a-boo">
+          <a href="#" class="peek-reveal">instagram</a>
+          <h6 class="peek-hide">@junglegemz {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</h6>
+        </div>
+
+        <div class="peek-a-boo">
+          <a href="#" class="peek-reveal">facebook</a>
+          <h6 class="peek-hide">@junglegemzapparel {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

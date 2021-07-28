@@ -1,0 +1,54 @@
+<div id="contact-form">
+  {% assign formId = 'contactForm' %}
+  {% form 'contact', id: formId %}
+    {% if form.posted_successfully? %} {{ 'contact.form.success_message' | t }} {% endif %}
+    {{ form_errors | default_errors }}
+
+    {% comment %}
+      <div id="{{ formId }}-radio" class="radio-wrap">
+        <input type="radio" id="{{ formId }}-option_1" name="contact[option_1]" value="question">
+        <input type="radio" id="{{ formId }}-option_2" name="contact[option_2]" value="track shipment">
+        <input type="radio" id="{{ formId }}-option_3" name="contact[option_3]" value="refund">
+      </div>
+
+       <!-- add if statement to show when "track shipment" option is selected?  -->
+      <div class="form-row">
+        <div class="order-number">
+          <label for="{{ formId }}-order-number">{{ 'contact.form.order_number' | t }}</label>
+          <input type="text" name="contact[order_number]" id="{{ formId }}-order_number" placeholder="{{ 'contact.form.order_number' | t | upcase }}"/>
+        </div>
+
+        <div class="order-date">
+          <label for="{{ formId }}-order_date">{{ 'contact.form.order_number' | t }}</label>
+          <input type="text" name="contact[order_date]" id="{{ formId }}-order_date" placeholder="{{ 'contact.form.order_number' | t | upcase }}"/>
+        </div>
+      </div>
+    {% endcomment %}
+
+    <div class="form-row">
+      <div class="first-name">
+        <label for="{{ formId }}-first_name" class="visually-hidden">{{ 'contact.form.first_name' | t }}</label>
+        <input type="text" name="contact[first_name]" id="{{ formId }}-first_name" placeholder="{{ 'contact.form.first_name' | t | upcase }}"/>
+      </div>
+
+      <div class="last-name">
+        <label for="{{ formId }}-last-name" class="visually-hidden">{{ 'contact.form.last_name' | t }}</label>
+        <input type="text" name="contact[last_name]" id="{{ formId }}-last_name" placeholder="{{ 'contact.form.last_name' | t | upcase }}"/>
+      </div>
+    </div>
+
+    <div class="email">
+      <label for="{{ formId }}-email" class="visually-hidden">{{ 'contact.form.email' | t }}</label>
+      <input type="email" name="contact[email]" id="{{ formId }}-email" aria-required="true" placeholder="{{ 'contact.form.email' | t | upcase }}"/>
+    </div>
+
+    <div class="message">
+      <label for="{{ formId }}-message" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+      <textarea rows="10" name="contact[body]" id="{{ formId }}-message" aria-required="true" placeholder="{{ 'contact.form.message' | t | upcase }}"></textarea>
+    </div>
+
+    <button type="submit" name="send" id="{{ formId }}-button">
+      {{ 'contact.form.submit' | t }}
+    </button>
+  {% endform %}
+</div>
