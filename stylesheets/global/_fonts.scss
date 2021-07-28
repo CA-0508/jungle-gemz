@@ -1,0 +1,18 @@
+/* hamburg-hand-regular */
+@font-face {
+  font-family: 'Hamburg Hand';
+  font-style: normal;
+  font-weight: 400;
+  src: font-url('hamburghang-regular-webfont', 'woff')
+       font-url('HamburgHand-Regular', 'otf');
+}
+
+/* necto-mono-regular */
+@font-face {
+  font-family: 'Necto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: font-url('Necto-Mono', 'woff2'),
+       font-url('Necto-Mono', 'woff'),
+       font-url('NectoMono-Regular', 'otf');
+}

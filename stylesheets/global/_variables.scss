@@ -1,0 +1,42 @@
+$headline-font: 'Hamburg Hand', 'Helvetica', 'Arial', Times, sans-serif;
+$text-font: 'Necto Mono', 'Courier New', Courier, monospace;
+
+$black: #2e2e2e;
+$white: #F8FDF0;
+$accent: #AEADF2;
+
+$light-black: rgba(46,46,46,0.4);
+$light-white: rgba(248,253,240,0.4);
+
+$text-color: #2e2e2e;
+$text-color-white: #F8FDF0;
+$text-color-light: #C0C0C0;
+$text-color-light-white: rgba(248,253,240,0.4);
+
+$border-color: rgba(174,173,242,1);
+$border-color-white: rgba(248,253,240,1);
+$border-color-black: rgba(46,46,46,1);
+$text-stroke: 1px $accent;
+
+$standard-border: 1px solid $border-color;
+$standard-border-white: 1px solid $border-color-white;
+$standard-border-black: 1px solid $border-color-black;
+
+$line-global: 30px;
+$gutter-global: $line-global*2; //60px
+$offset-global: $gutter-global;
+
+$header-height: 140px;
+
+$type-headline-display: 120px;
+$type-headline-lg: 70px;
+$type-headline-med: 50px;
+$type-headline-sm: 30px;
+$type-body-lg: 30px;
+$type-body-med: 18px;
+$type-body-meta: 14px;
+
+$type-bold: 700;
+$type-book: 400;
+
+$button-height: $line-global*2;

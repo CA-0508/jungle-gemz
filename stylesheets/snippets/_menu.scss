@@ -1,0 +1,44 @@
+#page-menu{
+  display: none;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: $header-height;
+  overflow: hidden;
+  background-image: image-url(menu_tiger-bg.jpg, master);
+  background-size: cover;
+  background-color: #ffcfa0;
+  z-index: 200;
+
+  .menu-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - #{$header-height});
+  }
+}
+
+//Menu Toggle Styles
+html.menu-open {
+  overflow: hidden;
+
+  #page-menu {
+    display: block;
+
+    .menu-link {
+      .menu-text {
+        display: none;
+      }
+
+      .menu-close-text {
+        display: block;
+      }
+    }
+  }
+
+  main {
+    pointer-events: none;
+  }
+
+}

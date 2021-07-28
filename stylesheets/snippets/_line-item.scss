@@ -1,0 +1,48 @@
+.line-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: $line-global/2 $line-global;
+  border-top: $standard-border;
+  font-size: $type-body-meta;
+
+  p,
+  .quantity {
+    font-size: $type-body-meta;
+    color: $accent;
+  }
+
+  .line-image {
+    width: 80px;
+    margin-right: $line-global;
+
+    img {
+      border: $standard-border;
+    }
+  }
+
+  .line-info {
+    width: 100%;
+  }
+
+  .info-content,
+  .info-actions {
+    @include flex-space-between;
+    >*:first-child {
+      margin-right: $line-global;
+    }
+  }
+
+  .info-content {
+    align-items: flex-start;
+    margin-bottom: $line-global;
+  }
+
+  .line-price {
+    text-align: right;
+  }
+
+  &:last-of-type {
+    border-bottom: $standard-border;
+  }
+}

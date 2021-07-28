@@ -1,0 +1,56 @@
+#announcement-wrap {
+  z-index: 4;
+
+  .announcement-bar {
+    width: 100%;
+    margin: 0;
+
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .announcement-bar_content {
+    display: block;
+    width: 100%;
+  }
+
+  .color-light {
+    background-color: $white;
+    color: $black;
+  }
+
+  .color-inverse {
+    background-color: $black;
+    color: $white;
+  }
+
+  .color-accent {
+    background-color: $accent;
+    color: $black;
+  }
+
+  .color-ruby {
+    background-color: #ff685c;
+    color: $white;
+  }
+
+  .color-moon_stone {
+    background-color: #c0c0c0;
+    color: $black;
+  }
+
+  .announcement-bar_message {
+    display: inline-block;
+    font-family: $headline-font;
+    font-size: $type-body-meta;
+  }
+
+  .hr-line-announcement {
+    width: 70px;
+    height: 1px;
+    margin: 0 ($line-global/2);
+    display: inline-block;
+    vertical-align: middle;
+    background-color: currentColor;
+  }
+}

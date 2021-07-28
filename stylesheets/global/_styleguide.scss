@@ -1,0 +1,223 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-family: $headline-font;
+  text-transform: uppercase;
+  color: $white;
+
+  @include text-outline;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  font-size: $type-headline-display;
+  line-height: $line-global*4;
+}
+
+h2,
+.h2 {
+  font-size: $type-headline-lg;
+  line-height: $line-global*2;
+}
+
+h3,
+.h3 {
+  font-size: $type-headline-med;
+  line-height: $line-global*1.5;
+}
+
+h4,
+.h4 {
+  font-size: $type-headline-sm;
+  line-height: $line-global;
+}
+
+h5,
+.h5 {
+  font-size: $type-body-lg;
+  line-height: $line-global;
+}
+
+h6,
+.h6 {
+  font-size: $type-body-med;
+  line-height: $line-global;
+}
+
+p {
+  font-family: $text-font;
+  font-size: $type-body-med;
+  line-height: $line-global;
+}
+
+.p-large {
+  font-family: $text-font;
+  font-size: $type-body-lg;
+  line-height: $line-global*2;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $text-color-white;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.link-logo {
+  display: inline-block;
+
+  .logo-name {
+    font-size: 310px;
+  }
+
+  .logo-mark {
+    font-size: 50px;
+  }
+}
+
+.text-link {
+  font-family: $headline-font;
+  color: $text-color-white;
+  fill: currentColor;
+
+  transition: all 0.3s ease;
+  &:hover {
+    color: $accent;
+  }
+}
+
+.text-childlink {
+  font-family: $text-font;
+  font-size: $line-global;
+  color: $text-color;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+button[type="submit"],
+.button {
+  @include reset-input;
+  display: inline-block;
+  width: auto;
+  padding: ($line-global / 2) $line-global ($line-global / 2) $offset-global*2;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: $type-body-med;
+  line-height: $line-global;
+  background: $black;
+  color: $white;
+  border: $standard-border;
+
+  transition: all 0.3s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    background: lighten($black, 10%);
+  }
+
+  &:hover {
+    color: $white;
+  }
+
+  &.button-cta {
+    width: 100%;
+    &:hover {
+      background-color: $accent;
+      color: $text-color;
+    }
+  }
+
+  .text-white & {
+    background: $white;
+    color: $black;
+
+    &:hover {
+      color: $black;
+      background: darken($white, 10%);
+    }
+  }
+}
+
+.currency-picker {
+  position: relative;
+  color: $text-color-white;
+
+  select {
+    @include reset-input;
+    font-family: $headline-font;
+    font-size: $type-body-med;
+    line-height: $line-global;
+    color: currentColor;
+    padding-right: $line-global/2;
+    width: 100%;
+  }
+
+  .inline-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    font-size: 1em;
+  }
+}
+
+.styled-select {
+  position: relative;
+  color: $text-color-white;
+
+  select {
+    @include reset-input;
+    font-family: $text-font;
+    font-size: $type-body-med;
+    line-height: $line-global;
+    color: currentColor;
+    padding-right: $line-global/2;
+    width: 100%;
+  }
+
+  .inline-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    font-size: 0.5em;
+  }
+
+  .text-white & {
+    color: $text-color-light-white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+blockquote {
+  cite {
+    display: block;
+    margin-top: $line-global;
+  }
+}

@@ -1,0 +1,74 @@
+{% schema %}
+  {
+    "name": "Instagram feed",
+    "class": "insta-feed-section",
+    "blocks": [
+      {
+        "type": "branded",
+        "name": "Instafeed",
+        "settings": [
+          {
+            "id": "bg_image",
+            "type": "image_picker",
+            "label": "Background Image"
+          },
+          {
+            "id": "info",
+            "type": "text",
+            "label": "Info",
+            "placeholder": "Follow Us On Instagram",
+            "info": "Defaults to \"Follow Us On Instagram\""
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "placeholder": "The Latest",
+            "info": "Defaults to \"The Latest\""
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Social Media",
+        "name": "Insta feed",
+        "blocks": [
+          {
+            "type": "branded",
+            "settings": {
+              "info": "Follow Us On Instagram",
+              "title": "The Latest"
+            }
+          }
+        ]
+      }
+    ],
+    "templates": ["index", "product"]
+  }
+{% endschema %}
+
+<div id="insta-feed-wrap">
+  <div class="insta-block" {{ block.shopify_attributes }}>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'branded' %}
+          {% if block.settings.bg_image != blank %}
+            <div class="feed-image">
+              <img src="{{ block.settings.bg_image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
+            </div>
+          {% endif %}
+
+          <div class="insta-feed-content valign-center">
+            <div class="display-title">
+              <div class="overline">{{ block.settings.info }}</div>
+              <div class="vr-line"></div>
+              <h1>{{ block.settings.title }}</h1>
+            </div>
+
+            <div id="insta-feed"></div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>

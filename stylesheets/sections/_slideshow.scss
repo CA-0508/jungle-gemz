@@ -1,0 +1,61 @@
+.hero-slideshow {
+  width: 100%;
+  height: calc(100vh - #{$header-height});
+  overflow: hidden;
+
+  .slideshow-wrap {
+    position: relative;
+    height: 100%;
+
+    .slider-button {
+      width: auto;
+      padding: 0 $line-global;
+      background: $black;
+      border: $standard-border;
+      line-height: 0.05;
+
+      transition: all 0.3 ease;
+
+      &:hover {
+        background: $white;
+        color: $black;
+      }
+    }
+  }
+
+  .slide {
+    width: 100%;
+    height: calc(100vh - #{$header-height});
+    position: relative;
+    z-index: 0;
+    background-color: $light-white;
+  }
+
+  .slide-image {
+    position: absolute;
+    inset: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .slide-content {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+    padding: $offset-global;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background: linear-gradient(90deg, transparent 0%, $light-black 100%);
+
+    p,
+    .button {
+      margin-top: $line-global;
+    }
+  }
+}

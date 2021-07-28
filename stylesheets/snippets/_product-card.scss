@@ -1,0 +1,37 @@
+.product-card {
+
+  .link-to-product {
+    position: relative;
+    img {
+      display: block;
+      width: 100%;
+      border: $standard-border;
+    }
+  }
+
+  .card-info {
+    position: absolute;
+    top: $line-global;
+    left: $line-global;
+  }
+
+  .card-info-bottom{
+    margin-top: $line-global/2;
+  }
+
+  .card-options {
+    margin-bottom: $line-global/3;
+    font-size: $type-body-meta;
+    text-transform: uppercase;
+    color: $accent;
+  }
+
+  .product-title {
+    font-size: $line-global;
+  }
+
+  .product-price {
+    font-family: $text-font;
+    color: $white;
+  }
+}

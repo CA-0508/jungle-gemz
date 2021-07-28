@@ -1,0 +1,46 @@
+<div id="footer-global">
+  <div class="footer-top">
+
+    {% assign socials = "Twitter Facebook Pinterest Instagram TikTok Tumblr Snapchat YouTube Twitch Vimeo" | split: ' ' %}
+
+    <div class="social-wrap">
+      <ul>
+        {% for social in socials %}
+          {% assign social_link = social | prepend: 'social_' | append: '_link' | downcase %}
+          {% if settings.[social_link] != blank %}
+            <li>
+              <a class="social-link" href="{{ settings[social_link] | escape }}" alt="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">
+                {{ social }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    <div class="copyright-wrap">
+      {% assign copyright_date = 'now' | date: '%Y' %}
+      <span class="copyright-info">
+        {{ 'footer.meta.copyright' | t: date: copyright_date }}
+      </span>
+    </div>
+
+    <div class="footer-menu-wrap">
+      {% include 'nav-list', handle: 'footer', class:'footer-menu-list' %}
+
+      {% include 'nav-list', handle: 'meta-menu', class:'meta-menu-list' %}
+    </div>
+
+    {% comment %}
+      <a class="link-logo" href="/">
+        {% assign shop_title = 'general.shop.title' | t %}
+        {% include 'inline-icon' with svg: 'logo-mark.svg', alt: shop_title, class: 'logo-mark' %}
+      </a>
+    {% endcomment %}
+  </div>
+
+</div>

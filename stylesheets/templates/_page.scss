@@ -1,0 +1,28 @@
+#page {
+  padding-top: $header-height+$line-global;
+
+  .page-inner {
+    margin: 0 auto;
+
+    .social-display-wrap {
+      margin-top: $offset-global;
+    }
+  }
+
+  .page-content {
+    margin-top: $offset-global;
+    max-width: 645px;
+  }
+
+  .contact-form-contents {
+    margin: $header-height 0;
+
+    .display-title {
+      margin-bottom: 0;
+    }
+
+    .page-content {
+      margin-top: 0;
+    }
+  }
+}

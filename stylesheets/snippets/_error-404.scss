@@ -1,0 +1,21 @@
+#error-404 {
+  height: calc(100vh-#{$header-height});
+  padding-top: $offset-global;
+  padding-bottom: $offset-global;
+  align-items: flex-start;
+
+  .search-form-area{
+    width: 50vw;
+
+    .search-form {
+      width: 100%;
+      max-width: 645px;
+      margin-top: $offset-global;
+      margin-bottom: auto;
+    }
+
+    .button {
+      margin-bottom: 0;
+    }
+  }
+}

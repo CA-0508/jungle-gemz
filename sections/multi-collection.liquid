@@ -1,0 +1,71 @@
+{% schema %}
+  {
+    "name": "Collection Showcase",
+    "class": "multi-collection-section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "collections_to_show",
+        "min": 2,
+        "max": 12,
+        "step": 2,
+        "default": 3,
+        "label": "Collections To Show"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Collection Card",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "placeholder": "Collection Title"
+          },
+          {
+            "id": "button_url",
+            "type": "url",
+            "label": "Button URL"
+          },
+          {
+            "id": "button_text",
+            "type": "text",
+            "label": "Button Text",
+            "placeholder": "View Collection",
+            "info": "Defaults to \"View Collection\""
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Showcase",
+        "name": "Multi-Collection",
+        "blocks": [
+          {
+            "type": "card",
+            "settings": {
+              "title": "Collection 1",
+              "button_url": "#",
+              "button_text": "View Collection"
+            }
+          },
+          {
+            "type": "card",
+            "settings": {
+              "title": "Collection 2",
+              "button_url": "#"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

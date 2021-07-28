@@ -1,0 +1,44 @@
+.insta-feed-section {
+  width: 100%;
+  height: 710px;
+  overflow: hidden;
+  .insta-feed-wrap {
+    position: relative;
+    height: 100%;
+  }
+}
+
+.insta-block {
+  width: 100%;
+  height: 710px;
+
+  position: relative;
+  background-color: $accent;
+}
+
+.feed-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.insta-feed {
+  display: block;
+}
+
+.insta-feed-content {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  padding: $offset-global;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
