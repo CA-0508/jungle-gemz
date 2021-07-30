@@ -5,30 +5,36 @@
     img {
       display: block;
       width: 100%;
+      object-fit: cover;
       border: $standard-border;
     }
   }
 
-  .card-info {
-    position: absolute;
-    top: $line-global;
-    left: $line-global;
-  }
+  // .card-info {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //
+  //   border: $standard-border;
+  //   padding: $line-global/2;
+  //   transform: rotate(90deg);
+  // }
 
   .card-info-bottom{
     margin-top: $line-global/2;
   }
 
+  .product-title,
   .card-options {
     margin-bottom: $line-global/3;
-    font-size: $type-body-meta;
+    font-size: $type-body-med;
     text-transform: uppercase;
     color: $accent;
   }
 
-  .product-title {
-    font-size: $line-global;
-  }
+  // .product-title {
+  //   font-size: $line-global;
+  // }
 
   .product-price {
     font-family: $text-font;

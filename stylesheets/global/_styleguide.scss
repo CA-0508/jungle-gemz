@@ -84,7 +84,7 @@ a {
   display: inline-block;
 
   .logo-name {
-    font-size: 310px;
+    font-size: 250px;
   }
 
   .logo-mark {
@@ -219,5 +219,12 @@ blockquote {
   cite {
     display: block;
     margin-top: $line-global;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  button[type="submit"],
+  .button {
+    font-size: $type-body-meta;
   }
 }

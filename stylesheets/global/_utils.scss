@@ -332,3 +332,10 @@ form {
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    padding-left: $line-global;
+    padding-right: $line-global;
+  }
+}

@@ -7,16 +7,13 @@
       </div>
     {% endif %}
 
-    <div class="card-info">
-      <!-- <div class="tag">sale</div> -->
-
-      <div class="product-title h3">
-        {{ product.title }}
-      </div>
-    </div>
+    <!-- <div class="card-info">
+      <div class="badge">sale</div>
+    </div> -->
   </a>
 
   <div class="card-info-bottom">
+    {% comment %}
     <div class="card-options">
       {% if product.available %}
         {% if product.variants.size > 1 %}
@@ -31,6 +28,11 @@
       {% else %}
         {{ 'product.form.sold_out' | t }}
       {% endif %}
+    </div>
+    {% endcomment %}
+
+    <div class="product-title">
+      {{ product.title }}
     </div>
 
     <div class="product-price h3">

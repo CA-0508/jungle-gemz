@@ -47,6 +47,7 @@
     z-index: 1;
     position: relative;
     padding: $offset-global;
+    text-align: right;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -56,6 +57,27 @@
     p,
     .button {
       margin-top: $line-global;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero-slideshow {
+    .slide-content {
+      padding: $header-height $line-global $line-global $line-global;
+
+      h2 {
+        font-size: $type-headline-med;
+      }
+
+      p,
+      .button {
+        margin-top: $line-global/2;
+      }
+
+      .button {
+        font-size: $type-body-meta;
+      }
     }
   }
 }

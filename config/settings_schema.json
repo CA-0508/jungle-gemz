@@ -78,6 +78,16 @@
        "label": "t:settings_schema.social-media.settings.share_pinterest.label"
      },
      {
+      "type": "header",
+      "content": "Social Share Image"
+     },
+     {
+      "type": "image_picker",
+      "id": "share_card",
+      "label": "Image",
+      "info": "This image is shown when sharing a link of the site on social media."
+     },
+     {
        "type": "header",
        "content": "t:settings_schema.social-media.settings.header__2.content"
      },
