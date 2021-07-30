@@ -1,5 +1,5 @@
 #announcement-wrap {
-  z-index: 4;
+  z-index: 2;
 
   .announcement-bar {
     width: 100%;
@@ -52,5 +52,17 @@
     display: inline-block;
     vertical-align: middle;
     background-color: currentColor;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #announcement-wrap {
+    .announcement-bar_message {
+      font-size: $line-global/3;
+    }
+
+    .hr-line-announcement {
+      width: $line-global;
+    }
   }
 }

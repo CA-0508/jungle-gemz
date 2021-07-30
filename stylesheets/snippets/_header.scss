@@ -3,15 +3,11 @@
   height: $header-height;
   position: fixed;
   top: 0;
-  left: 0;
   padding: $line-global $offset-global;
   @include flex-space-between;
-  z-index: 1;
+  z-index: 100;
 
-  background: linear-gradient(180deg, $light-black 0%, transparent 100%);
-
-  // background: rgba(46,46,46,0);
-  // transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 
   .menu-link {
     cursor: pointer;
@@ -23,7 +19,6 @@
 }
 
 .header-nav-list {
-  margin-left: $offset-global;
   display: inline-block;
   li {
     display: block;
@@ -55,13 +50,64 @@
     color: $black;
     border: $standard-border;
   }
-
 }
 
-.header-global_opacity {
-    background-color: rgba(46,46,46,.95);
+#header-mobile {
+  display: none;
 }
 
-.header-global_text-change {
-    color: $black;
+@media screen and (max-width: 800px) {
+  #header-global {
+    height: auto;
+
+    .header-right {
+      margin-top: $line-global;
+      text-align: right;
+      > * {
+        &:not(:first-child) {
+          margin-left: $line-global/2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #header-global {
+    padding: $line-global/2 $line-global;
+
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  #header-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    padding: $line-global/2 $line-global;
+    background: $black;
+    border: $standard-border;
+
+    z-index: 100;
+
+    .menu-link {
+      cursor: pointer;
+    }
+
+    .menu-close-text {
+      display: none;
+    }
+
+
+  }
 }

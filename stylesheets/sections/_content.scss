@@ -55,7 +55,7 @@
 
 .content-block-quote {
   background: $light-white;
-  padding: $line-global*5 $offset-global;
+  padding: ($line-global*5) $offset-global;
   text-align: center;
 
   blockquote {
