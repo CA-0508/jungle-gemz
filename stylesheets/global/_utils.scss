@@ -338,4 +338,24 @@ form {
     padding-left: $line-global;
     padding-right: $line-global;
   }
+
+  .display-title {
+    h1 {
+      font-size: $type-headline-lg;
+    }
+  }
+
+  .menu-nav-list {
+    margin-top: $line-global;
+
+    .text-link {
+      font-size: $type-headline-lg;
+    }
+  }
+
+  .peek-a-boo {
+    .peek-reveal {
+      font-size: $type-headline-lg;
+    }
+  }
 }

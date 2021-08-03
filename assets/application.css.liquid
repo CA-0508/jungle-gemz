@@ -678,6 +678,21 @@ form .form-row {
     padding-left: 30px;
     padding-right: 30px;
   }
+
+  .display-title h1 {
+    font-size: 70px;
+  }
+
+  .menu-nav-list {
+    margin-top: 30px;
+  }
+  .menu-nav-list .text-link {
+    font-size: 70px;
+  }
+
+  .peek-a-boo .peek-reveal {
+    font-size: 70px;
+  }
 }
 /* slider */
 .slick-slider {
@@ -812,8 +827,9 @@ form .form-row {
   height: 100vh;
   padding-top: 140px;
   overflow: hidden;
+  background-image: url("menu_tiger-bg.jpg", "master");
   background-size: cover;
-  background-color: #ffcfa0;
+  background-color: #FF685C;
   z-index: 200;
 }
 #page-menu .menu-contents {
@@ -839,6 +855,16 @@ html.menu-open main {
   pointer-events: none;
 }
 
+@media screen and (max-width: 500px) {
+  #page-menu {
+    height: 100%;
+    overflow: scroll;
+  }
+  #page-menu #footer-global {
+    margin-top: 30px;
+    padding-bottom: 70px;
+  }
+}
 #header-global {
   width: 100%;
   height: 140px;
@@ -1013,16 +1039,8 @@ html.menu-open main {
     flex-direction: column-reverse;
     align-items: flex-end;
   }
-  #footer-global .footer-menu-wrap {
-    text-align: right;
-  }
-}
-@media screen and (max-width: 800px) {
-  #footer-global .footer-bottom {
-    flex-direction: column-reverse;
-    align-items: flex-end;
-  }
-  #footer-global .footer-menu-wrap {
+  #footer-global .footer-menu-wrap,
+#footer-global .copyright-wrap {
     text-align: right;
   }
 }
@@ -1047,9 +1065,6 @@ html.menu-open main {
     align-items: flex-end;
     padding-top: 30px;
     border-top: 1px solid #aeadf2;
-  }
-  #footer-global .footer-menu-wrap {
-    text-align: right;
   }
   #footer-global .social-wrap {
     display: inline-block;
@@ -1314,7 +1329,7 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
 }
 
 .collection-list {
-  grid-template-columns: repeat(5, 16.66vw);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat 3, 1fr;
 }
 .collection-list .collection-info-block {
@@ -1323,7 +1338,7 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
   grid-row: 1;
 }
 .collection-list .product-card {
-  grid-column: auto;
+  grid-column: span 2;
   grid-row: 2;
 }
 .collection-list .collection-block-button {
@@ -1531,6 +1546,16 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
 }
 
 @media screen and (max-width: 500px) {
+  .hero-slideshow .slideshow-wrap .slider-button {
+    display: none;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: 1px 1px 1px 1px;
+    /* IE6, IE7 */
+    clip: 1px, 1px, 1px, 1px;
+  }
   .hero-slideshow .slide-content {
     padding: 140px 30px 30px 30px;
   }
@@ -1564,9 +1589,14 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
 .content-block-image_text .image-text.bgcolor-light .block-content {
   background-color: #F8FDF0;
 }
+.content-block-image_text .block-image {
+  max-height: 560px;
+}
 .content-block-image_text .block-image img {
   display: block;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .content-block-image_text .block-content {
   padding: 60px;
@@ -1601,6 +1631,14 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
   margin-top: 60px;
 }
 
+@media screen and (max-width: 500px) {
+  .content-block-image_text .image-text {
+    flex-direction: column;
+  }
+  .content-block-image_text .image-text.direction-rtl {
+    flex-direction: column-reverse;
+  }
+}
 #announcement-wrap {
   z-index: 2;
 }
@@ -1712,10 +1750,14 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
   background-size: cover;
 }
 #featured-product_wrap .product-wrap {
-  width: 1350px;
-  height: 560px;
   margin: 60px auto;
+}
+#featured-product_wrap .product-wrap .product-contents {
+  width: 100%;
+  max-width: 1350px;
+  height: 560px;
   position: relative;
+  margin: 0 auto;
   border: 1px solid #aeadf2;
   background-color: #c0c0c0;
 }
@@ -1734,6 +1776,9 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
   right: 0;
 }
 
+#page-collection {
+  position: relative;
+}
 #page-collection #collection-image {
   height: 33vh;
   min-height: 250px;
@@ -1745,7 +1790,7 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
   object-fit: cover;
 }
 #page-collection .collection-content {
-  padding-top: 60px;
+  padding-top: 140px;
 }
 #page-collection .page-title {
   text-align: right;
@@ -1755,7 +1800,7 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
 }
 #page-collection .product-wrap {
   grid-template-columns: repeat(10, 1fr);
-  margin-top: -30px;
+  margin-top: -50px;
 }
 #page-collection .product-card {
   grid-column: span 2;
@@ -1767,7 +1812,7 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
   background-color: #F8FDF0;
   color: #2e2e2e;
   position: fixed;
-  bottom: 30px;
+  bottom: 60px;
   left: 60px;
   border: 1px solid #aeadf2;
   padding: 15px 30px;
@@ -1793,6 +1838,27 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
   margin-right: 30px;
 }
 
+@media screen and (max-width: 1300px) {
+  #page-collection .product-wrap {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  #page-collection .product-wrap {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  #page-collection .product-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #page-collection .page-title h1 {
+    font-size: 70px;
+  }
+  #page-collection .collection-sorting {
+    display: none;
+  }
+}
 #page-product #product-top {
   padding-top: 170px;
   padding-bottom: 60px;
@@ -1985,6 +2051,7 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
 }
 #page .page-content {
   margin-top: 60px;
+  width: 100%;
   max-width: 645px;
 }
 #page .contact-form-contents {
@@ -1995,4 +2062,10 @@ input[type=radio]:checked + label .option-color .option-color-inner:after {
 }
 #page .contact-form-contents .page-content {
   margin-top: 0;
+}
+
+@media screen and (max-width: 500px) {
+  #page .page-content {
+    padding: 0 30px;
+  }
 }

@@ -63,6 +63,17 @@
 
 @media screen and (max-width: 500px) {
   .hero-slideshow {
+    .slideshow-wrap {
+      .slider-button {
+        display: none;
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: 1px 1px 1px 1px; /* IE6, IE7 */
+        clip: 1px, 1px, 1px, 1px;
+      }
+    }
     .slide-content {
       padding: $header-height $line-global $line-global $line-global;
 

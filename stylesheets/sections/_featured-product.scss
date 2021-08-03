@@ -15,12 +15,19 @@
   }
 
   .product-wrap {
-    width: 1350px;
-    height: 560px;
     margin: $offset-global auto;
-    position: relative;
-    border: $standard-border;
-    background-color: #c0c0c0;
+
+    .product-contents {
+      width: 100%;
+      max-width: 1350px;
+      height: 560px;
+      position: relative;
+      margin: 0 auto;
+
+      border: $standard-border;
+      background-color: #c0c0c0;
+
+    }
 
     .product-image {
       position: absolute;

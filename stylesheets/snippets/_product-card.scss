@@ -10,16 +10,6 @@
     }
   }
 
-  // .card-info {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //
-  //   border: $standard-border;
-  //   padding: $line-global/2;
-  //   transform: rotate(90deg);
-  // }
-
   .card-info-bottom{
     margin-top: $line-global/2;
   }
@@ -31,10 +21,6 @@
     text-transform: uppercase;
     color: $accent;
   }
-
-  // .product-title {
-  //   font-size: $line-global;
-  // }
 
   .product-price {
     font-family: $text-font;

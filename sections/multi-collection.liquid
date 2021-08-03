@@ -30,14 +30,14 @@
             "placeholder": "Collection Title"
           },
           {
-            "id": "button_url",
+            "id": "card_link",
             "type": "url",
-            "label": "Button URL"
+            "label": "Link URL"
           },
           {
-            "id": "button_text",
+            "id": "link_text",
             "type": "text",
-            "label": "Button Text",
+            "label": "Link Text",
             "placeholder": "View Collection",
             "info": "Defaults to \"View Collection\""
           }
@@ -53,15 +53,15 @@
             "type": "card",
             "settings": {
               "title": "Collection 1",
-              "button_url": "#",
-              "button_text": "View Collection"
+              "card_link": "#",
+              "link_text": "View Collection"
             }
           },
           {
             "type": "card",
             "settings": {
               "title": "Collection 2",
-              "button_url": "#"
+              "card_link": "#"
             }
           }
         ]
@@ -69,3 +69,31 @@
     ]
   }
 {% endschema %}
+
+<div class="multi-collection-wrap">
+  {% for block in section.blocks %}
+    <div class="multi-block-{{ block.type }}" {{ block.shopify_attributes }}>
+      {% case block.type %}
+        {% when 'card' %}
+
+          <div class="collection-card-wrap wrapper">
+            {% assign collection = collections[block.settings.collection] %}
+            <h1>{{ collection.title }}</h1>
+            <!-- <ul>
+              {% for collection in collections %}
+                {% assign collection = collections[block.settings.collection] %}
+                {% assign card_link = collection | prepend: 'card_' | append: '_link' | downcase %}
+                {% if settings.[card_link] != blank %}
+                  <li>
+                    <a class="card-link" href="{{ settings[card_link] | escape }}" alt="{{ settings[card_link] | escape }}" aria-describedby="a11y-external-message">
+                      {{ collection.title }}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul> -->
+          </div>
+      {% endcase %}
+    </div>
+  {% endfor %}
+</div>

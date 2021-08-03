@@ -43,11 +43,13 @@
   }
 {% endschema %}
 
-{% assign product = all_products[section.settings.featured_product] %}
+<!-- {% assign product = all_products[section.settings.featured_product] %} -->
+
 
 <div id="featured-product_wrap">
   <div class="featured">
     {% for block in section.blocks %}
+      {% assign product = products[block.settings.product] %}
         <div class="featured-content" {{ block.shopify_attributes }}>
           <div class="marquee-wrap">
             <div class="marquee-inner">
@@ -55,14 +57,15 @@
             </div>
           </div>
 
-          <div class="product-wrap">
-            {% comment %}
-            <a class="product-image">
-               <img src="{{ product.image | img_url: 'master' }}" alt="{{ product.image.alt | escape }}">
-            </a>
-            {% endcomment %}
+          <div class="product-wrap wrapper">
 
             <div class="product-contents">
+              {% comment %}
+              <a class="product-image">
+                 <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}">
+              </a>
+              {% endcomment %}
+
               <h1>{{ product.title }}</h1>
               <a href="{{ product.url }}" class="button"> {{ block.settings.button_text }} </a>
             </div>

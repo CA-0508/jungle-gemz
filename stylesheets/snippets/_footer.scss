@@ -81,21 +81,8 @@
       align-items: flex-end;
     }
 
-    .footer-menu-wrap {
-      text-align: right;
-    }
-  }
-}
-
-@media screen and (max-width: 800px) {
-
-  #footer-global {
-    .footer-bottom {
-      flex-direction: column-reverse;
-      align-items: flex-end;
-    }
-
-    .footer-menu-wrap {
+    .footer-menu-wrap,
+    .copyright-wrap {
       text-align: right;
     }
   }
@@ -124,10 +111,6 @@
       align-items: flex-end;
       padding-top: $line-global;
       border-top: $standard-border;
-    }
-
-    .footer-menu-wrap {
-      text-align: right;
     }
 
     .social-wrap {

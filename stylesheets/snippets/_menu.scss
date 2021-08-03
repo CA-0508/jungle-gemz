@@ -6,9 +6,9 @@
   height: 100vh;
   padding-top: $header-height;
   overflow: hidden;
-  // background-image: image-url('menu_tiger-bg.jpg', 'master');
+  background-image: url('menu_tiger-bg.jpg', 'master');
   background-size: cover;
-  background-color: #ffcfa0;
+  background-color: $ruby;
   z-index: 200;
 
   .menu-contents {
@@ -41,4 +41,16 @@ html.menu-open {
     pointer-events: none;
   }
 
+}
+
+@media screen and (max-width: 500px) {
+  #page-menu {
+    height: 100%;
+    overflow: scroll;
+
+    #footer-global {
+      margin-top: $line-global;
+      padding-bottom: $header-height/2;
+    }
+  }
 }
