@@ -30,6 +30,24 @@
           <a href="#" class="peek-reveal">facebook</a>
           <h6 class="peek-hide">@junglegemzapparel {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</h6>
         </div>
+
+        <!-- {% assign socials = "Twitter Facebook Pinterest Instagram TikTok Tumblr Snapchat YouTube Twitch Vimeo" | split: ' ' %}
+
+        <div class="social-wrap">
+          <ul>
+            {% for social in socials %}
+              {% assign social_link = social | prepend: 'social_' | append: '_link' | downcase %}
+              {% if settings.[social_link] != blank %}
+                <li>
+                  <a class="social-link" href="{{ settings[social_link] | escape }}" alt="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">
+                    {{ social }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div> -->
+
       </div>
     </div>
   </div>

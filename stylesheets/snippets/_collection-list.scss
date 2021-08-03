@@ -1,6 +1,6 @@
 .collection-list {
   @extend .grid;
-  grid-template-columns: repeat(5, 16.66vw);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat (3, 1fr);
 
   .collection-info-block {
@@ -11,7 +11,7 @@
   }
 
   .product-card {
-    grid-column: auto;
+    grid-column: span 2;
     grid-row: 2;
   }
 

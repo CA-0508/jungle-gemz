@@ -25,9 +25,12 @@
   }
 
   .block-image {
+    max-height: 560px;
     img {
       display: block;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -68,5 +71,17 @@
 
   .button {
     margin-top: $offset-global;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content-block-image_text {
+    .image-text {
+      flex-direction: column;
+
+      &.direction-rtl {
+        flex-direction: column-reverse;
+      }
+    }
   }
 }

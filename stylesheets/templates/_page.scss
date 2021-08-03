@@ -11,6 +11,7 @@
 
   .page-content {
     margin-top: $offset-global;
+    width: 100%;
     max-width: 645px;
   }
 
@@ -23,6 +24,14 @@
 
     .page-content {
       margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #page {
+    .page-content {
+      padding: 0 $line-global;
     }
   }
 }
