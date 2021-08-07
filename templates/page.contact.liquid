@@ -1,11 +1,11 @@
 <div id="page" class="wrapper valign-center">
   <div class="page-inner">
     <div class="page-content">
-      <div class="display-title">
+      <!-- <div class="display-title">
         <div class="overline">send an email</div>
         <div class="vr-line"></div>
         <h3>info@junglegemz.com</h3>
-      </div>
+      </div> -->
 
       <div class="contact-form-contents">
         <div class="display-title">
@@ -18,37 +18,26 @@
         {% include 'contact-form' %}
       </div>
 
-      <div class="display-title social-display-wrap">
+      {% assign socials = "Twitter Facebook Pinterest Instagram TikTok Tumblr Snapchat YouTube Twitch Vimeo" | split: ' ' %}
+      <div class="social-display-wrap display-title">
         <div class="overline">follow us</div>
         <div class="vr-line"></div>
-        <div class="peek-a-boo">
-          <a href="#" class="peek-reveal">instagram</a>
-          <h6 class="peek-hide">@junglegemz {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</h6>
-        </div>
-
-        <div class="peek-a-boo">
-          <a href="#" class="peek-reveal">facebook</a>
-          <h6 class="peek-hide">@junglegemzapparel {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</h6>
-        </div>
-
-        <!-- {% assign socials = "Twitter Facebook Pinterest Instagram TikTok Tumblr Snapchat YouTube Twitch Vimeo" | split: ' ' %}
-
-        <div class="social-wrap">
-          <ul>
-            {% for social in socials %}
-              {% assign social_link = social | prepend: 'social_' | append: '_link' | downcase %}
-              {% if settings.[social_link] != blank %}
-                <li>
-                  <a class="social-link" href="{{ settings[social_link] | escape }}" alt="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">
-                    {{ social }}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div> -->
-
+        <ul>
+          {% for social in socials %}
+            {% assign social_link = social | prepend: 'social_' | append: '_link' | downcase %}
+            {% assign social_handle = social | prepend: 'social_' | append: '_handle' | downcase %}
+            {% if settings.[social_link] != blank %}
+              <li class="peek-a-boo">
+                <a class="peek-reveal" href="{{ settings[social_link] | escape }}" alt="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">
+                  {{ social }}
+                </a>
+                <h6 class="peek-hide">{{ settings.[social_handle] }} {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</h6>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
+
     </div>
   </div>
 </div>

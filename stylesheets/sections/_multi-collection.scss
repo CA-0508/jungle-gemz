@@ -1,0 +1,59 @@
+.multi-collection__wrap {
+  margin: $offset-global 0 $line-global 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .multi-block-card {
+    margin-bottom: $line-global;
+  }
+
+  .collection-card__wrap {
+
+    .multi-card__item {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      height: 240px;
+      margin: 0 auto;
+      border: $standard-border;
+      border-radius: $line-global/2;
+      overflow: hidden;
+
+      grid-column: auto;
+
+      transition: all 0.8s ease-in-out;
+
+      &:hover {
+        .content-title {
+          color: transparent;
+        }
+        .multi-card__image {
+          display: block;
+        }
+      }
+    }
+
+    .content-title {
+      pointer-events: none;
+    }
+
+    .multi-card__contents {
+      position: absolute;
+      bottom: $line-global;
+      right: $line-global;
+      text-align: right;
+    }
+
+    .multi-card__image {
+      display: none;
+      position: absolute;
+      inset: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+}
