@@ -99,9 +99,21 @@
      },
      {
        "type": "text",
+       "id": "social_twitter_handle",
+       "label": "t:settings_schema.social-media.settings.social_twitter_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_twitter_handle.info"
+     },
+     {
+       "type": "text",
        "id": "social_facebook_link",
        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
        "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
+     },
+     {
+       "type": "text",
+       "id": "social_facebook_handle",
+       "label": "t:settings_schema.social-media.settings.social_facebook_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_facebook_handle.info"
      },
      {
        "type": "text",
@@ -111,9 +123,21 @@
      },
      {
        "type": "text",
+       "id": "social_pinterest_handle",
+       "label": "t:settings_schema.social-media.settings.social_pinterest_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_pinterest_handle.info"
+     },
+     {
+       "type": "text",
        "id": "social_instagram_link",
        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
        "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
+     },
+     {
+       "type": "text",
+       "id": "social_instagram_handle",
+       "label": "t:settings_schema.social-media.settings.social_instagram_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_instagram_handle.info"
      },
      {
        "type": "text",
@@ -123,9 +147,21 @@
      },
      {
        "type": "text",
+       "id": "social_tiktok_handle",
+       "label": "t:settings_schema.social-media.settings.social_tiktok_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_tiktok_handle.info"
+     },
+     {
+       "type": "text",
        "id": "social_tumblr_link",
        "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
        "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+     },
+     {
+       "type": "text",
+       "id": "social_tumblr_handle",
+       "label": "t:settings_schema.social-media.settings.social_tumblr_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_tumblr_handle.info"
      },
      {
        "type": "text",
@@ -135,9 +171,21 @@
      },
      {
        "type": "text",
+       "id": "social_snapchat_handle",
+       "label": "t:settings_schema.social-media.settings.social_snapchat_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_snapchat_handle.info"
+     },
+     {
+       "type": "text",
        "id": "social_youtube_link",
        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
        "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
+     },
+     {
+       "type": "text",
+       "id": "social_youtube_handle",
+       "label": "t:settings_schema.social-media.settings.social_youtube_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_youtube_handle.info"
      },
      {
        "type": "text",
@@ -147,9 +195,21 @@
      },
      {
        "type": "text",
+       "id": "social_twitch_handle",
+       "label": "t:settings_schema.social-media.settings.social_twitch_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_twitch_handle.info"
+     },
+     {
+       "type": "text",
        "id": "social_vimeo_link",
        "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
        "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+     },
+     {
+       "type": "text",
+       "id": "social_vimeo_handle",
+       "label": "t:settings_schema.social-media.settings.social_vimeo_handle.label",
+       "info": "t:settings_schema.social-media.settings.social_vimeo_handle.info"
      }
    ]
  },

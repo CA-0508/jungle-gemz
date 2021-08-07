@@ -16,20 +16,29 @@
         "type": "product",
         "settings": [
           {
-            "type": "product",
-            "id": "featured_product",
-            "label": "Product"
+            "type": "image_picker",
+            "id": "featured_image",
+            "label": "Featured Image"
           },
           {
-            "type": "checkbox",
-            "id": "show_button",
-            "label": "Show button?",
-            "default": true
+            "type": "text",
+            "id": "featured_title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "marquee_contents",
+            "label": "Loop Text"
           },
           {
             "type": "text",
             "id": "button_text",
             "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Product Link"
           }
         ]
       }
@@ -43,37 +52,35 @@
   }
 {% endschema %}
 
-<!-- {% assign product = all_products[section.settings.featured_product] %} -->
+<!-- {% assign product = products[block.settings.product] %} -->
 
 
 <div id="featured-product_wrap">
   <div class="featured">
     {% for block in section.blocks %}
-      {% assign product = products[block.settings.product] %}
         <div class="featured-content" {{ block.shopify_attributes }}>
           <div class="marquee-wrap">
             <div class="marquee-inner">
-              <h3>dummy text — dummy text — dummy text — dummy text — dummy text</h3>
+              <h3>{{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }}</h3>
             </div>
           </div>
 
           <div class="product-wrap wrapper">
 
             <div class="product-contents">
-              {% comment %}
-              <a class="product-image">
-                 <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}">
-              </a>
-              {% endcomment %}
+              <h1 class="featured_product-title">{{ block.settings.featured_title }}</h1>
 
-              <h1>{{ product.title }}</h1>
-              <a href="{{ product.url }}" class="button"> {{ block.settings.button_text }} </a>
+              <a class="product-image">
+                 <img src="{{ block.settings.featured_image.src | img_url: 'master' }}" alt="{{ block.settings.featured_image.alt | escape }}">
+              </a>
+
+              <a href="{{ block.settings.button_url }}" class="button"> {{ block.settings.button_text }} </a>
             </div>
           </div>
 
           <div class="marquee-wrap">
             <div class="marquee-inner">
-              <h3>dummy text &mdash; dummy text &mdash; dummy text &mdash; dummy text &mdash; dummy text</h3>
+              <h3>{{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }} &mdash; {{ block.settings.marquee_contents }}</h3>
             </div>
           </div>
         </div>

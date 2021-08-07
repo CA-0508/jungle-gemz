@@ -209,7 +209,6 @@ form {
 
   .peek-hide {
     display: none;
-
     transition: all 0.3 ease;
   }
 
@@ -279,7 +278,8 @@ form {
     animation-delay: 0.3s;
     padding: $line-global 0;
 
-    &:hover {
+    &:hover,
+    &:focus {
       animation-play-state: paused;
     }
   }
@@ -353,9 +353,26 @@ form {
     }
   }
 
+  form {
+    .form-row {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+  }
+
   .peek-a-boo {
     .peek-reveal {
       font-size: $type-headline-lg;
+      color: transparent;
+      @include text-outline;
+      opacity: 0.25;
+    }
+    .peek-hide {
+      display: block;
+      position: absolute;
+      top: 35%;
+      left: 0;
+      right: 0;
     }
   }
 }

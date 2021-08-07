@@ -13,50 +13,90 @@
           "label": "Pin on Pinterest"
         },
         "header__1": {
-          "content": "Social sharing options"
+          "content": "Social Sharing Options"
         },
         "header__2": {
-          "content": "Social accounts"
+          "content": "Social Accounts"
         },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https://twitter.com/shopify"
         },
+        "social_twitter_handle": {
+          "label": "Twitter Handle",
+          "info": "@twitter"
+        },
         "social_facebook_link": {
           "label": "Facebook",
           "info": "https://facebook.com/shopify"
+        },
+        "social_facebook_handle": {
+          "label": "Facebook Handle",
+          "info": "@facebook"
         },
         "social_pinterest_link": {
           "label": "Pinterest",
           "info": "https://pinterest.com/shopify"
         },
+        "social_pinterest_handle": {
+          "label": "Pinterest Handle",
+          "info": "@pinterest"
+        },
         "social_instagram_link": {
           "label": "Instagram",
           "info": "http://instagram.com/shopify"
+        },
+        "social_instagram_handle": {
+          "label": "Instagram Handle",
+          "info": "@instagram"
         },
         "social_tiktok_link": {
           "label": "TikTok",
           "info": "https://tiktok.com/@shopify"
         },
+        "social_tiktok_handle": {
+          "label": "TikTok Handle",
+          "info": "@tiktok"
+        },
         "social_tumblr_link": {
           "label": "Tumblr",
           "info": "https://shopify.tumblr.com"
+        },
+        "social_tumblr_handle": {
+          "label": "Tumblr Username",
+          "info": "tumblr"
         },
         "social_snapchat_link": {
           "label": "Snapchat",
           "info": "https://www.snapchat.com/add/shopify"
         },
+        "social_snapchat_handle": {
+          "label": "Snapchat Username",
+          "info": "snapchat"
+        },
         "social_youtube_link": {
           "label": "YouTube",
           "info": "https://www.youtube.com/shopify"
+        },
+        "social_youtube_handle": {
+          "label": "YouTube Channel Name",
+          "info": "youtube"
         },
         "social_twitch_link": {
           "label": "Twitch",
           "info": "https://twitch.tv/shopify"
         },
+        "social_twitch_handle": {
+          "label": "Twitch Username",
+          "info": "TwitchKR"
+        },
         "social_vimeo_link": {
           "label": "Vimeo",
           "info": "https://vimeo.com/shopify"
+        },
+        "social_vimeo_handle": {
+          "label": "Vimeo Username",
+          "info": "vimeo"
         }
       }
     },

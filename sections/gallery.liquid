@@ -55,23 +55,27 @@
 {% endschema %}
 
 <div class="gallery-wrap">
-  {% for block in section.blocks %}
-    <div class="grid masonary">
-      <div class="gallery-container" {{ block.shopify_attributes }} >
+    <div class="gallery-container">
+    {% for block in section.blocks %}
+      <div class="gallery-item" {{ block.shopify_attributes }}>
         {% if block.settings.link != blank %}
-        <a href="{{ block.settings.link }}"></a>
+        <a href="{{ block.settings.link }}">
         {% endif %}
 
-        {% if block.settings.photo_description != blank %}
-        <p>{{ block.settings.photo_description }}</p>
-        {% endif %}
+          {% if block.settings.image != blank %}
+            <div class="gallery-image">
+              <img src=" {{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.image.alt }}">
+            </div>
+          {% endif %}
 
-        {% if block.settings.image != blank %}
-          <div class="gallery-image">
-            <img src=" {{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.image.alt }}">
-          </div>
+          {% if block.settings.photo_description != blank %}
+          <p>{{ block.settings.photo_description }}</p>
+          {% endif %}
+
+        {% if block.settings.link != blank %}
+        </a>
         {% endif %}
       </div>
+    {% endfor %}
     </div>
-  {% endfor %}
 </div>
