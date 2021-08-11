@@ -19,3 +19,17 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  #error-404 {
+    align-items: flex-end;
+
+    .search-form-area {
+      width: 100%;
+
+      .button {
+        margin-top: $line-global;
+      }
+    }
+  }
+}

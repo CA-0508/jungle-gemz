@@ -1,7 +1,10 @@
 #contact-form {
   width: 100%;
-  max-width: 645px;
-  padding: $line-global;
+  padding: $line-global/2;
   margin: $line-global 0;
   border: $standard-border;
+
+  .success {
+    margin-bottom: $line-global;
+  }
 }

@@ -1,6 +1,6 @@
 .product-card {
-
   .link-to-product {
+    display: block;
     position: relative;
     img {
       display: block;
@@ -8,6 +8,41 @@
       object-fit: cover;
       border: $standard-border;
     }
+  }
+
+  .badge {
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    top: $line-global;
+    right: 0;
+    width: 100%;
+  }
+
+  .label {
+    color: $white;
+    font-size: $type-body-meta;
+    padding: ($line-global/5) ($line-global);
+    border: $standard-border;
+    text-align: left;
+    text-transform: uppercase;
+    @include rotate;
+    z-index: 1;
+  }
+  .badge--sold-out {
+    background-color: $moonstone;
+  }
+  .badge--sale {
+    background-color: $citrine;
+    color: $black;
+  }
+  .badge--preorder {
+    background-color: $accent;
+  }
+  .badge--new {
+    background-color: $ruby;
   }
 
   .card-info-bottom{
@@ -25,5 +60,19 @@
   .product-price {
     font-family: $text-font;
     color: $white;
+
+    .strikethrough {
+      color: transparent;
+      text-decoration: 2px solid line-through;
+      text-decoration-color: $accent;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product-card {
+    .label {
+      padding: ($line-global/3) ($line-global/2);
+    }
   }
 }

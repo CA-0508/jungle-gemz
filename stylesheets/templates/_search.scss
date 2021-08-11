@@ -1,6 +1,5 @@
 #page-search {
-
-  .search-form-area{
+  .search-form-area {
     width: 50vw;
 
     #search-form-wrap {
@@ -25,5 +24,12 @@
       max-height: 600px;
     }
   }
+}
 
+@media screen and (max-width: 800px) {
+  #page-search {
+    .search-form-area {
+      width: 100%;
+    }
+  }
 }

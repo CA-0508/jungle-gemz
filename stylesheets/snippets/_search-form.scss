@@ -22,3 +22,16 @@
     width: auto;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .search-form {
+    #search-term {
+      font-size: $type-body-lg;
+    }
+
+    button {
+      position: static;
+      display: block;
+    }
+  }
+}

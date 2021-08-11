@@ -53,6 +53,18 @@
         right: 0;
       }
     }
+  }
+}
 
+@media screen and (max-width: 500px) {
+  #featured-product_wrap {
+    .product-wrap {
+      .product-contents {
+        .featured_product-title {
+          font-size: $type-headline-med;
+          line-height: 1em;
+        }
+      }
+    }
   }
 }

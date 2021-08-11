@@ -1,0 +1,115 @@
+.promo-wrap {
+  z-index: 200;
+  .popup-wrap {
+    width: 100%;
+    min-height: 100%;
+
+    .popup-contents {
+      position: fixed;
+      width: 100%;
+      max-width: 800px;
+      height: 500px;
+      bottom: 0;
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: $line-global;
+      background-color: $moonstone;
+      border: $standard-border;
+      -webkit-transition: all 1.25s ease-in-out;
+      -moz-transition: all 1.25s ease-in-out;
+      -o-transition: all 1.25s ease-in-out;
+      transition: all 1.25s ease-in-out;
+
+      .close {
+        color: $black;
+        position: absolute;
+        top: $line-global;
+        right: $line-global;
+        cursor: pointer;
+      }
+
+      .popup-text {
+        margin-bottom: $line-global;
+        p {
+          max-width: 445px;
+        }
+      }
+    }
+
+    #plus {
+      position: fixed;
+      bottom: 30%;
+      margin-left: -425px;
+      -webkit-transition: all 1.25s ease;
+      -moz-transition: all 1.25s ease;
+      -o-transition: all 1.25s ease;
+      transition: all 1.25s ease;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        left: 0;
+        background: $light-black;
+        border: $standard-border;
+        padding: $line-global/3;
+        font-size: $type-body-med;
+        text-transform: uppercase;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: relative;
+      }
+    }
+  }
+
+  .newsletter-wrap {
+    padding: $line-global $offset-global;
+    background: $moonstone;
+
+    .newsletter-contents {
+      display: flex;
+      justify-content: space-between;
+
+      .section-header {
+        width: 75vw;
+        margin-right: $line-global;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 900px) {
+  .promo-wrap {
+    .popup-wrap {
+      .popup-contents {
+        margin-left: -100%;
+      }
+      #plus {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .promo-wrap {
+    .newsletter-wrap {
+      padding: $offset-global $line-global;
+      .newsletter-contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .section-header {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: $line-global;
+        }
+      }
+    }
+  }
+}

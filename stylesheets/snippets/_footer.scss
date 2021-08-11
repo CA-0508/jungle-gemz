@@ -92,6 +92,8 @@
 
   #footer-global {
     padding: $line-global;
+    margin-top: 0;
+    margin-bottom: $offset-global;
 
     .nav-list {
       display: block;

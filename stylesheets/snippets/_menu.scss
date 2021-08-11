@@ -6,8 +6,9 @@
   height: 100vh;
   padding-top: $header-height;
   overflow: hidden;
-  background-image: url('menu_tiger-bg.jpg', 'master');
+  background-image: image-url('menu-tiger-bg.jpg', 'master');
   background-size: cover;
+  background-position: center;
   background-color: $ruby;
   z-index: 200;
 

@@ -55,5 +55,26 @@
       }
     }
   }
+}
 
+@media screen and (max-width: 1300px) {
+  .multi-collection__wrap {
+    grid-template-columns: 1fr;
+
+    .collection-card__wrap {
+      .multi-card__image {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .multi-collection__wrap {
+    .collection-card__wrap {
+      .content-title {
+        font-size: $type-body-lg;
+      }
+    }
+  }
 }

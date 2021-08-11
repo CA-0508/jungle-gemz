@@ -475,4 +475,39 @@ $(document).ready(function() {
 
   sectionSlideshows.init();
 
+  //sticky back to top button by yying6
+  $(window).scroll(function() {
+				if ($(this).scrollTop() > 200) {
+					$('#scroll-to-top').fadeIn(200);
+				} else {
+					$('#scroll-to-top').fadeOut(200);
+				}
+			});
+
+  $('#scroll-to-top').click(function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({scrollTop: 0}, 300);
+  })
+
+});
+
+
+//Popup
+$(document).scroll(function() {
+  var scroll = $(this).scrollTop();
+  if (scroll >= 150) {
+    $(".popup-contents").css("margin-left", "-100%");
+    $("#plus").css("margin-left", "0px");
+  }
+});
+
+$("#plus").click(function() {
+  $(".popup-contents").css("margin-left", "0px");
+  $("#plus").css("margin-left", "-100%");
+});
+
+$("#close").click(function() {
+  $(".popup-contents").css("margin-left", "-100%");
+  $("#plus").css("margin-left", "0px");
 });

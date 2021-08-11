@@ -7,7 +7,6 @@ h3,
   font-family: $headline-font;
   text-transform: uppercase;
   color: $white;
-
   @include text-outline;
 }
 
@@ -161,6 +160,28 @@ button[type="submit"],
   }
 }
 
+#scroll-to-top {
+  display: inline-block;
+  background-color: $accent;
+  border: $standard-border-white;
+  width: $offset-global;
+  height: $offset-global;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  position: fixed;
+  bottom: $offset-global;
+  right: $offset-global;
+  transition: all 0.5s ease;
+  display: none;
+  z-index: 1000;
+
+  &:hover {
+    background-color: $black;
+    border: $standard-border;
+  }
+}
+
 .currency-picker {
   position: relative;
   color: $text-color-white;
@@ -226,5 +247,11 @@ blockquote {
   button[type="submit"],
   .button {
     font-size: $type-body-meta;
+    padding-left: $line-global*3;
+  }
+
+  #scroll-to-top {
+    bottom: $line-global*3;
+    right: $line-global;
   }
 }

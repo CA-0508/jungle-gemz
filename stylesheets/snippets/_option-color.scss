@@ -24,14 +24,9 @@
       right: $outline-space;
       border: 1px solid $text-color-light;
       pointer-events: none;
-      // border-radius: 100%;
       opacity: 0;
     }
   }
-
-  // .color-swatch {
-  //   border-radius: 100%;
-  // }
 
   &.color-black,
   &.color-dark-grey,

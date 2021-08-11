@@ -62,7 +62,9 @@
     }
 
     .hr-line-announcement {
-      width: $line-global;
+      width: 1px;
+      height: $line-global/2;
+      margin: 0 ($line-global/3);
     }
   }
 }
