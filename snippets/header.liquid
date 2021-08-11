@@ -14,7 +14,7 @@
     </a>
 
     {% if shop.customer_accounts_enabled %}
-    <!-- {% for link in navList.links %} -->
+    {% for link in navList.links %}
       {% if customer %}
         <a class="text-link" href="/account">{{ 'customer.account.title' | t }}</a>
         {{ 'customer.log_out' | t | customer_logout_link }}
@@ -24,7 +24,7 @@
           {{ 'customer.register' | t | customer_register_link }}
         {% endif %}
       {% endif %}
-    <!-- {% endfor %} -->
+    {% endfor %}
     {% endif %}
 
     {%- if shop.customer_accounts_enabled -%}

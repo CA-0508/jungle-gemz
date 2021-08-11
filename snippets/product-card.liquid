@@ -1,42 +1,82 @@
-<div class="product-card">
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
 
+{% assign sold_out = true %}
+{% if product.available %}
+  {% assign sold_out = false %}
+{% endif %}
+
+<div class="product-card">
   <a class="link-to-product" href="{{ product.url | within: collection }}">
     {% if product.featured_image %}
       <div class="card-image">
+        {% assign show_label_new = show_label_new | default: settings.product_collection_show_label_new %}
+        {% assign show_label_preorder = show_label_preorder | default: settings.product_collection_show_label_preorder %}
+
+        {% if show_label_new or show_label_preorder or on_sale or sold_out %}
+           {% assign label_present = true %}
+        {% else %}
+           {% assign label_present = false %}
+        {% endif %}
+
         <img src="{{ product.featured_image.src | img_url: '750x1000', crop: 'center' }}" alt="{{ product.featured_image.alt | escape }}">
       </div>
     {% endif %}
 
-    <!-- <div class="card-info">
-      <div class="badge">sale</div>
-    </div> -->
+    <div class="badge">
+      {% comment %}
+         Inspired by Doudmine's Custom Code | https://www.doudmine.com/
+      {% endcomment %}
+      {% if label_present %}
+         {% if on_sale %}
+           {% if settings.show_sale_badge %}
+              <span class="label badge--sale">
+                 <span class="badge__text">{{ 'product.form.on_sale' | t }} {% if settings.show_percentage %}&mdash; {{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | money_without_currency | replace: ',', '.' | times: 100 | remove: '.0'}}% OFF {% endif %}</span>
+              </span>
+           {% endif %}
+         {% endif %}
+
+         {% if sold_out and settings.show_sold_out_badge %}
+           <span class="label badge--sold-out">
+              <span class="badge__text">{{ 'product.form.sold_out' | t }}</span>
+           </span>
+         {% endif %}
+
+         {% if show_label_preorder %}
+           {% if product.metafields.my_fields.preorder == true %}
+              <span class="label badge--preorder">
+                 <span>{{ 'product.form.preorder' | t }}</span>
+              </span>
+           {% endif %}
+         {% endif %}
+
+         {% if show_label_new %}
+           {% if product.metafields.my_fields.new == true %}
+              <span class="label badge--new">
+                 <span>{{ 'product.form.new' | t }}</span>
+              </span>
+           {% endif %}
+         {% endif %}
+      {% endif %}
+    </div>
   </a>
 
   <div class="card-info-bottom">
-    {% comment %}
-    <div class="card-options">
-      {% if product.available %}
-        {% if product.variants.size > 1 %}
-          {% if product.options.size == 1 %}
-            {{ 'product.card.options_styles_singular' | t: optionCount: product.options.size, styleCount: product.variants.size }}
-          {% else %}
-            {{ 'product.card.options_styles_plural' | t: optionCount: product.options.size, styleCount: product.variants.size }}
-          {% endif %}
-        {% else %}
-          {{ product.variants.first.title }}
-        {% endif %}
-      {% else %}
-        {{ 'product.form.sold_out' | t }}
-      {% endif %}
-    </div>
-    {% endcomment %}
 
     <div class="product-title">
       {{ product.title }}
     </div>
 
     <div class="product-price h3">
-      {{ product.price | money_without_trailing_zeros }}
+      {% assign price = product.price | money_without_trailing_zeros %}
+      {% if on_sale != false %}
+        <span class="product_sale_price">{{ price }}</span>
+        <span class="strikethrough">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+      {% else %}
+        {{ price }}
+      {% endif %}
     </div>
   </div>
 </div>

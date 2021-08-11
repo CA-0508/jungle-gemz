@@ -1,11 +1,13 @@
-<div id="page" class="wrapper valign-center">
+<div id="page" class="valign-center">
   <div class="page-inner">
     <div class="page-content">
-      <!-- <div class="display-title">
+      {% comment %}
+      <div class="display-title">
         <div class="overline">send an email</div>
         <div class="vr-line"></div>
         <h3>info@junglegemz.com</h3>
-      </div> -->
+      </div>
+      {% endcomment %}
 
       <div class="contact-form-contents">
         <div class="display-title">
@@ -28,10 +30,8 @@
             {% assign social_handle = social | prepend: 'social_' | append: '_handle' | downcase %}
             {% if settings.[social_link] != blank %}
               <li class="peek-a-boo">
-                <a class="peek-reveal" href="{{ settings[social_link] | escape }}" alt="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">
-                  {{ social }}
-                </a>
-                <h6 class="peek-hide">{{ settings.[social_handle] }} {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</h6>
+                <div class="peek-reveal">{{ social }}</div>
+                <a class="peek-hide h6" href="{{ settings[social_link] | escape }}" alt="{{ settings[social_link] | escape }}" aria-describedby="a11y-external-message">{{ settings.[social_handle] }} {% include 'inline-icon' with svg: 'icon-arrow-ne.svg', class: 'current-color-stroke' %}</a>
               </li>
             {% endif %}
           {% endfor %}

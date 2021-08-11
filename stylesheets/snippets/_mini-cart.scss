@@ -80,3 +80,11 @@ html.mini-cart-open {
     display: block;
   }
 }
+
+@media screen and (max-width: 500px) {
+  #mini-cart {
+    z-index: 999;
+    height: calc(100vh - #{$header-height});
+    overflow-y: scroll;
+  }
+}

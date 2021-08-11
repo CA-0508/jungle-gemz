@@ -1,5 +1,8 @@
 <div id="page-cart" class="wrapper page-layout">
-  <h1>{{ 'cart.title' | t }}</h1>
+
+  <div class="page-info">
+    <h1 class="page-title">{{ 'cart.title' | t }}</h1>
+  </div>
   
   <div class="cart-page-contents js-cart-page-contents" data-cart-item-count="{{ cart.item_count }}">
     {% include 'cart-contents' %}

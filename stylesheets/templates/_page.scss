@@ -16,7 +16,7 @@
   }
 
   .contact-form-contents {
-    margin: $header-height 0;
+    margin-bottom: $header-height;
 
     .display-title {
       margin-bottom: 0;
@@ -30,8 +30,9 @@
 
 @media screen and (max-width: 500px) {
   #page {
+    padding-top: $header-height;
     .page-content {
-      padding: 0 $line-global;
+      padding: 0 ($line-global/2);
     }
   }
 }

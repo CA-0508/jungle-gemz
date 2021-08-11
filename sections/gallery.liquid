@@ -1,7 +1,7 @@
 {% schema %}
   {
     "name": "Gallery",
-    "class": "gallery-section",
+    "class": "section-gallery",
     "settings": [
       {
         "id": "title",
@@ -69,7 +69,7 @@
           {% endif %}
 
           {% if block.settings.photo_description != blank %}
-          <p>{{ block.settings.photo_description }}</p>
+            <p class="visually-hidden">{{ block.settings.photo_description }}</p>
           {% endif %}
 
         {% if block.settings.link != blank %}

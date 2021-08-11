@@ -26,7 +26,6 @@
 
 <form id="add-to-cart-form" action="/cart/add" method="post" enctype="multipart/form-data" data-variants="{{ variants_with_quantity_json | url_param_escape }}">
   {% if has_multiple_options or has_multiple_variants %}
-
     {% for option in product.options_with_values %}
       {% assign option_name = 'option' | append: option.position %}
 
@@ -45,14 +44,13 @@
 
   <input class="js-variant-id" type="hidden" name="id" value="{% if has_selected_variant %}{{ product.selected_variant.id }}{% elsif has_multiple_variants != true %}{{ product.variants.first.id }}{% endif %}">
 
-  <!--
-  <label for="Quantity">quantity</label>
-  <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  {% include 'inline-icon' with svg: 'icon-chevron-up.svg', class: 'current-color-stroke' %}
-  {% include 'inline-icon' with svg: 'icon-chevron-down.svg', class: 'current-color-stroke' %}
-  -->
   <button type="submit" name="add" id="add-to-cart-button" {% if can_add_to_cart != true %}disabled{% endif %}>
-    {{ 'product.form.submit' | t }}
+    {% if product.metafields.my_fields.preorder == true %}
+      {{ 'product.form.preorder' | t }}
+    {% else %}
+      {{ 'product.form.submit' | t }}
+    {% endif %}
+
     &ndash;
     <span class="js-price" data-default-price="{{ product.price | money }}">{{ current_variant.price | money_without_trailing_zeros }}</span>
   </button>

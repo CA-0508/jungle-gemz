@@ -1,5 +1,18 @@
 {
   "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close_modal": "Close",
+      "link_messages": {
+        "new_window": "Opens in a new window.",
+        "external": "Opens external website.",
+        "new_window_and_external": "Opens external website in a new window."
+      },
+      "refresh_page": "Choosing a selection results in a full page refresh.",
+      "selection_help": "Press the space key then arrow keys to make a selection.",
+      "unit_price_separator": "per",
+      "error": "Error"
+    },
     "shop": {
       "title": "Jungle Gemz Apparel",
       "description": "Custom streetwear for the people who are cut from a different cloth, born to handle these concrete jungles.",
@@ -10,23 +23,17 @@
       "open": "menu",
       "close": "close"
     },
-    "social": {
-     "alt_text": {
-       "share_on_facebook": "Share on Facebook",
-       "share_on_twitter": "Tweet on Twitter",
-       "share_on_pinterest": "Pin on Pinterest"
-     },
-     "pages": {
-       "loop_text": "black + woman owned",
-       "contact_email": "info@junglegemz.com"
-     }
+    "newsletter_form": {
+     "confirmation": "Thanks for signing up!",
+     "submit": "Subscribe"
    },
-  "404": {
-    "title": "404",
-    "error_code": "Sorry, we couldn't find that page. Try searching for something else instead?",
-    "back": "Back to Home"
-    }
-  },
+   "404": {
+     "title": "404",
+     "error_code": "Sorry, we couldn't find that page. Try searching for something else instead?",
+     "back": "Back to Home"
+   }
+ },
+
   "footer": {
     "meta": {
       "copyright": "© Jungle Gemz Apparel | All Rights Reserved {{ date }}"
@@ -54,7 +61,7 @@
       "content": "Order Summary",
       "subtotal": "Subtotal",
       "update": "Update",
-      "button": "Proceed to Checkout",
+      "button": "Checkout",
       "currency_note_html": "We process all orders in {{ currency }}. While the contents of your cart are currently displayed in <span class=\"js-active-currency\"></span>, the checkout will use {{ currency }} at the current exchange rate."
     }
   },
@@ -71,7 +78,7 @@
     },
     "shipping": {
       "title": "Shipping",
-      "content": "Products ship via FedEx within 48 hours of order. Due to the nature of our products, signature confirmation is required upon delivery. For more information, see the Delivery & Returns page."
+      "content": "Products ship via FedEx within 48 hours of order. For more information, see the Delivery & Returns page."
     },
     "returns": {
       "title": "Returns",
@@ -80,7 +87,10 @@
     "form": {
       "submit": "Add to Cart",
       "quantity": "Quantity",
-      "sold_out": "Sold Out"
+      "sold_out": "Sold Out",
+      "on_sale": "Sale",
+      "preorder": "Preorder",
+      "new": "New"
     },
     "more": {
       "title": "Recommended",
@@ -124,12 +134,6 @@
       "ask_questions": "Questions",
       "track_order": "Track Shipment",
       "refund_request": "Refund"
-    }
-  },
-  "form": {
-    "errors": {
-      "translated_fields": "?",
-      "messages": "is required"
     }
   },
   "search": {

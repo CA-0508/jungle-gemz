@@ -24,7 +24,7 @@
   }
 
   .collection-list {
-    grid-template-columns: repeat(5, 16.66vw);
+    grid-template-columns: repeat(10, 16.66vw);
     grid-template-rows: repeat (3, 1fr);
 
     >*:last-child {
@@ -46,6 +46,26 @@
     .collection-block-button {
       grid-column: auto;
       grid-row: 3;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product-more {
+
+    .collection-list {
+
+      .collection-info-block {
+        grid-column: span 3;
+      }
+
+      .product-card {
+        grid-column: span 2;
+      }
+
+      .collection-block-button {
+        grid-column: span 3;
+      }
     }
   }
 }

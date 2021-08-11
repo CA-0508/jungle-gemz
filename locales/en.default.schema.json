@@ -3,18 +3,6 @@
     "social-media": {
       "name": "Social media",
       "settings": {
-        "share_facebook": {
-          "label": "Share on Facebook"
-        },
-        "share_twitter": {
-          "label": "Tweet on Twitter"
-        },
-        "share_pinterest": {
-          "label": "Pin on Pinterest"
-        },
-        "header__1": {
-          "content": "Social Sharing Options"
-        },
         "header__2": {
           "content": "Social Accounts"
         },
@@ -24,7 +12,7 @@
         },
         "social_twitter_handle": {
           "label": "Twitter Handle",
-          "info": "@twitter"
+          "info": "e.g. @twitter"
         },
         "social_facebook_link": {
           "label": "Facebook",
@@ -32,7 +20,7 @@
         },
         "social_facebook_handle": {
           "label": "Facebook Handle",
-          "info": "@facebook"
+          "info": "e.g. @facebook"
         },
         "social_pinterest_link": {
           "label": "Pinterest",
@@ -40,7 +28,7 @@
         },
         "social_pinterest_handle": {
           "label": "Pinterest Handle",
-          "info": "@pinterest"
+          "info": "e.g. @pinterest"
         },
         "social_instagram_link": {
           "label": "Instagram",
@@ -48,7 +36,7 @@
         },
         "social_instagram_handle": {
           "label": "Instagram Handle",
-          "info": "@instagram"
+          "info": "e.g. @instagram"
         },
         "social_tiktok_link": {
           "label": "TikTok",
@@ -56,7 +44,7 @@
         },
         "social_tiktok_handle": {
           "label": "TikTok Handle",
-          "info": "@tiktok"
+          "info": "e.g. @tiktok"
         },
         "social_tumblr_link": {
           "label": "Tumblr",
@@ -64,7 +52,7 @@
         },
         "social_tumblr_handle": {
           "label": "Tumblr Username",
-          "info": "tumblr"
+          "info": "e.g. F Yeah Kpop"
         },
         "social_snapchat_link": {
           "label": "Snapchat",
@@ -72,7 +60,7 @@
         },
         "social_snapchat_handle": {
           "label": "Snapchat Username",
-          "info": "snapchat"
+          "info": "e.g. Snapchat Grr"
         },
         "social_youtube_link": {
           "label": "YouTube",
@@ -80,7 +68,7 @@
         },
         "social_youtube_handle": {
           "label": "YouTube Channel Name",
-          "info": "youtube"
+          "info": "e.g. Youtube For Noobs"
         },
         "social_twitch_link": {
           "label": "Twitch",
@@ -88,7 +76,7 @@
         },
         "social_twitch_handle": {
           "label": "Twitch Username",
-          "info": "TwitchKR"
+          "info": "e.g. TwitchKR"
         },
         "social_vimeo_link": {
           "label": "Vimeo",
@@ -96,7 +84,7 @@
         },
         "social_vimeo_handle": {
           "label": "Vimeo Username",
-          "info": "vimeo"
+          "info": "e.g. Vimeo Archive"
         }
       }
     },
@@ -117,6 +105,12 @@
         "announcement": {
           "name": "Announcement",
           "settings": {
+            "show_announcement": {
+              "label": "Show Announcement"
+            },
+            "home_page_only": {
+              "label": "Home Page Only"
+            },
             "message": {
               "label": "Message"
             },

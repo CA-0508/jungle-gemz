@@ -34,194 +34,206 @@
            "value": "money_with_currency_format",
            "label": "With currency ($10.00 USD)"
          }
-       ],
-       "default": "money_with_currency_format"
-     },
-     {
-       "type": "text",
-       "id": "supported_currencies",
-       "label": "Supported currencies",
-       "default": "INR GBP CAD USD AUD EUR JPY KRW",
-       "info": "Use the country's ISO [currency code](http://www.xe.com/iso4217.php). Separate your currency codes with a space."
-     },
-     {
-       "type": "text",
-       "id": "default_currency",
-       "label": "Default currency",
-       "default": "USD"
-     }
-   ]
- },
- {
-   "name": "Social Media",
-   "settings": [
-     {
-       "type": "header",
-       "content": "t:settings_schema.social-media.settings.header__1.content"
-     },
-     {
-       "type": "checkbox",
-       "id": "share_facebook",
-       "default": true,
-       "label": "t:settings_schema.social-media.settings.share_facebook.label"
-     },
-     {
-       "type": "checkbox",
-       "id": "share_twitter",
-       "default": true,
-       "label": "t:settings_schema.social-media.settings.share_twitter.label"
-     },
-     {
-       "type": "checkbox",
-       "id": "share_pinterest",
-       "default": true,
-       "label": "t:settings_schema.social-media.settings.share_pinterest.label"
-     },
-     {
-      "type": "header",
-      "content": "Social Share Image"
-     },
-     {
-      "type": "image_picker",
-      "id": "share_card",
-      "label": "Image",
-      "info": "This image is shown when sharing a link of the site on social media."
-     },
-     {
-       "type": "header",
-       "content": "t:settings_schema.social-media.settings.header__2.content"
-     },
-     {
-       "type": "text",
-       "id": "social_twitter_link",
-       "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
-       "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_twitter_handle",
-       "label": "t:settings_schema.social-media.settings.social_twitter_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_twitter_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_facebook_link",
-       "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
-       "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_facebook_handle",
-       "label": "t:settings_schema.social-media.settings.social_facebook_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_facebook_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_pinterest_link",
-       "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
-       "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_pinterest_handle",
-       "label": "t:settings_schema.social-media.settings.social_pinterest_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_pinterest_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_instagram_link",
-       "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
-       "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_instagram_handle",
-       "label": "t:settings_schema.social-media.settings.social_instagram_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_instagram_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_tiktok_link",
-       "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
-       "info": "t:settings_schema.social-media.settings.social_tiktok_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_tiktok_handle",
-       "label": "t:settings_schema.social-media.settings.social_tiktok_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_tiktok_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_tumblr_link",
-       "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
-       "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_tumblr_handle",
-       "label": "t:settings_schema.social-media.settings.social_tumblr_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_tumblr_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_snapchat_link",
-       "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
-       "info": "t:settings_schema.social-media.settings.social_snapchat_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_snapchat_handle",
-       "label": "t:settings_schema.social-media.settings.social_snapchat_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_snapchat_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_youtube_link",
-       "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
-       "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_youtube_handle",
-       "label": "t:settings_schema.social-media.settings.social_youtube_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_youtube_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_twitch_link",
-       "label": "t:settings_schema.social-media.settings.social_twitch_link.label",
-       "info": "t:settings_schema.social-media.settings.social_twitch_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_twitch_handle",
-       "label": "t:settings_schema.social-media.settings.social_twitch_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_twitch_handle.info"
-     },
-     {
-       "type": "text",
-       "id": "social_vimeo_link",
-       "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
-       "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
-     },
-     {
-       "type": "text",
-       "id": "social_vimeo_handle",
-       "label": "t:settings_schema.social-media.settings.social_vimeo_handle.label",
-       "info": "t:settings_schema.social-media.settings.social_vimeo_handle.info"
-     }
-   ]
- },
- {
-   "name": "Favicon",
-   "settings": [
-     {
-       "type": "image_picker",
-       "id": "favicon",
-       "label": "t:settings_schema.favicon.settings.favicon.label",
-       "info": "t:settings_schema.favicon.settings.favicon.info"
-     }
-   ]
- }
+         ],
+         "default": "money_with_currency_format"
+       },
+       {
+         "type": "text",
+         "id": "supported_currencies",
+         "label": "Supported currencies",
+         "default": "INR GBP CAD USD AUD EUR JPY KRW",
+         "info": "Use the country's ISO [currency code](http://www.xe.com/iso4217.php). Separate your currency codes with a space."
+       },
+       {
+         "type": "text",
+         "id": "default_currency",
+         "label": "Default currency",
+         "default": "USD"
+       }
+     ]
+   },
+   {
+     "name": "Social Media",
+     "settings": [
+       {
+        "type": "header",
+        "content": "Social Share Image"
+       },
+       {
+        "type": "image_picker",
+        "id": "share_card",
+        "label": "Image",
+        "info": "This image is shown when sharing a link of the site on social media."
+       },
+       {
+         "type": "header",
+         "content": "t:settings_schema.social-media.settings.header__2.content"
+       },
+       {
+         "type": "text",
+         "id": "social_twitter_link",
+         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
+         "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_twitter_handle",
+         "label": "t:settings_schema.social-media.settings.social_twitter_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_twitter_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_facebook_link",
+         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+         "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_facebook_handle",
+         "label": "t:settings_schema.social-media.settings.social_facebook_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_facebook_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_pinterest_link",
+         "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
+         "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_pinterest_handle",
+         "label": "t:settings_schema.social-media.settings.social_pinterest_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_pinterest_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_instagram_link",
+         "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
+         "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_instagram_handle",
+         "label": "t:settings_schema.social-media.settings.social_instagram_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_instagram_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_tiktok_link",
+         "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
+         "info": "t:settings_schema.social-media.settings.social_tiktok_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_tiktok_handle",
+         "label": "t:settings_schema.social-media.settings.social_tiktok_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_tiktok_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_tumblr_link",
+         "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
+         "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_tumblr_handle",
+         "label": "t:settings_schema.social-media.settings.social_tumblr_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_tumblr_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_snapchat_link",
+         "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
+         "info": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_snapchat_handle",
+         "label": "t:settings_schema.social-media.settings.social_snapchat_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_snapchat_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_youtube_link",
+         "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
+         "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_youtube_handle",
+         "label": "t:settings_schema.social-media.settings.social_youtube_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_youtube_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_twitch_link",
+         "label": "t:settings_schema.social-media.settings.social_twitch_link.label",
+         "info": "t:settings_schema.social-media.settings.social_twitch_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_twitch_handle",
+         "label": "t:settings_schema.social-media.settings.social_twitch_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_twitch_handle.info"
+       },
+       {
+         "type": "text",
+         "id": "social_vimeo_link",
+         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
+         "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+       },
+       {
+         "type": "text",
+         "id": "social_vimeo_handle",
+         "label": "t:settings_schema.social-media.settings.social_vimeo_handle.label",
+         "info": "t:settings_schema.social-media.settings.social_vimeo_handle.info"
+       }
+     ]
+   },
+   {
+     "name": "Favicon",
+     "settings": [
+       {
+         "type": "image_picker",
+         "id": "favicon",
+         "label": "t:settings_schema.favicon.settings.favicon.label",
+         "info": "t:settings_schema.favicon.settings.favicon.info"
+       }
+     ]
+   },
+   {
+    "name": "Product Badges",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product Badges"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sale_badge",
+        "label": "Show 'Sale' badge"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_percentage",
+        "label": "Show Discount Percentage"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sold_out_badge",
+        "label": "Show 'Sold Out' badge"
+      },
+      {
+      "type": "checkbox",
+      "id": "product_collection_show_label_preorder",
+      "label": "Show 'Preorder' badge"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_collection_show_label_new",
+        "label": "Show 'NEW' badge"
+      }
+    ]
+  }
 ]

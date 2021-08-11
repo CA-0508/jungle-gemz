@@ -16,7 +16,7 @@
       <h2>{{ 'customer.orders.title' | t }}</h2>
 
       {% paginate customer.orders by 20 %}
-        {%- if customer.orders.size > 0 -%}
+        {% if customer.orders.size > 0 %}
           <table role="table" class="order-history">
             <caption class="visually-hidden">{{ 'customer.orders.title' | t }}</caption>
             <thead role="rowgroup">
@@ -29,7 +29,7 @@
               </tr>
             </thead>
             <tbody role="rowgroup">
-              {%- for order in customer.orders -%}
+              {% for order in customer.orders %}
                 <tr role="row">
                   <td
                     id="RowOrder"
@@ -53,18 +53,18 @@
                   <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
                     {{ order.total_price | money_with_currency }}</td>
                 </tr>
-              {%- endfor -%}
+              {% endfor %}
             </tbody>
           </table>
-        {%- else -%}
+        {% else %}
           <p>{{ 'customer.orders.none' | t }}</p>
-        {%- endif -%}
+        {% endif %}
 
-        {%- if paginate.pages > 1 -%}
-          {%- if paginate.parts.size > 0 -%}
+        {% if paginate.pages > 1 %}
+          {% if paginate.parts.size > 0 %}
               <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
                 <ul role="list">
-                {%- if paginate.previous -%}
+                {% if paginate.previous %}
                   <li>
                     <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
                       <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
@@ -72,23 +72,23 @@
                       </svg>
                     </a>
                   </li>
-                {%- endif -%}
+                {% endif %}
 
-                {%- for part in paginate.parts -%}
+                {% for part in paginate.parts %}
                   <li>
-                    {%- if part.is_link -%}
+                    {% if part.is_link %}
                       <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
-                    {%- else -%}
-                      {%- if part.title == paginate.current_page -%}
+                    {% else %}
+                      {% if part.title == paginate.current_page %}
                         <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
-                      {%- else -%}
+                      {% else %}
                         <span>{{ part.title }}</span>
-                      {%- endif -%}
-                    {%- endif -%}
+                      {% endif %}
+                    {% endif %}
                   </li>
-                {%- endfor -%}
+                {% endfor %}
 
-                {%- if paginate.next -%}
+                {% if paginate.next %}
                   <li>
                     <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}" >
                       <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
@@ -96,11 +96,11 @@
                       </svg>
                     </a>
                   </li>
-                {%- endif -%}
+                {% endif %}
                 </ul>
               </nav>
-          {%- endif -%}
-        {%- endif -%}
+          {% endif %}
+        {% endif %}
       {% endpaginate %}
     </div>
 

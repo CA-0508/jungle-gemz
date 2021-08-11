@@ -17,23 +17,12 @@
         </div>
 
         <div class="cart-totals">
-          <!-- <div class="extra-items">
-            {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
-            {{ item.line_price | money }}
-            {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
-          </div> -->
 
           <div class="subtotal-line">
             <h6>{{ 'cart.filled.subtotal' | t }}</h6>
             <span class="price">{{ cart.total_price | money }}</span>
           </div>
 
-          {% comment %}
-            {% if template != 'cart' %}
-              <button class="button-cta" type="submit" name="cart">{{ 'cart.filled.button' | t }}</button>
-              {% else %}
-            {% endif %}
-          {% endcomment %}
           <div class="cart-buttons">
             <button class="update-button" type="submit" name="update">{{ 'cart.filled.update' | t }}</button>
             <button class="button-cta" type="submit" name="checkout">{{ 'cart.filled.button' | t }}</button>

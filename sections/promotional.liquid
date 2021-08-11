@@ -110,16 +110,18 @@
       {% case block.type %}
         {% when 'popup' %}
           {% if block.settings.show_popup != false %}
-            <div class="modal popup-wrap">
-
-              {% if block.settings.show_popup_bg != false %}
-                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}" class="popup-bg-image">
-              {% endif %}
-
+            <div class="popup-wrap">
               <div class="popup-contents">
-                <h3>{{ block.settings.popup_title }}</h3>
+                <div id="close" class="close">{% include 'inline-icon' with svg: 'icon-x.svg', alt: 'close', class: 'current-color-stroke' %}</div>
 
-                <p>{{ block.settings.popup_content }}</p>
+                {% if block.settings.show_popup_bg != false %}
+                  <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}" class="popup-bg-image">
+                {% endif %}
+
+                <div class="popup-text">
+                  <h3>{{ block.settings.popup_title }}</h3>
+                  <p>{{ block.settings.popup_content }}</p>
+                </div>
 
                 {% comment %} form starts {% endcomment %}
                 {% assign formId = 'Popup_' | append: section.id %}
@@ -129,12 +131,11 @@
                       {{ 'general.newsletter_form.confirmation' | t }}
                     </p>
                   {% endif %}
-                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <input type="hidden" name="contact[tags]" value="popup">
                   <div class="form-row">
                     <div class="input-group {% if form.errors %} input-group--error{% endif %}">
                       <input type="text" name="contact[first_name]" id="{{ formId }}-first_name"
                         class="input-group__field{% if form.errors %} input--error{% endif %}"
-                        value="{{ 'contact.form.first_name' | t }}"
                         placeholder="{{ 'contact.form.first_name' | t | upcase }}"
                         aria-label="First Name"
                         aria-required="true"
@@ -150,7 +151,6 @@
                     <div class="input-group {% if form.errors %} input-group--error{% endif %}">
                       <input type="email" name="contact[email]" id="{{ formId }}-email"
                         class="input-group__field{% if form.errors %} input--error{% endif %}"
-                        value="{{ 'contact.form.email' | t  }}"
                         placeholder="{{ 'contact.form.email' | t | upcase }}"
                         aria-label="Email Address"
                         aria-required="true"
@@ -180,73 +180,67 @@
                   {% endif %}
                 {% endform %}
               </div>
+
+              <div id="plus">
+                <span>
+                  {{ block.settings.popup_title }} </br>
+                  +
+                </span>
+              </div>
             </div>
           {% endif %}
-        </div>
+
 
         {% when 'newsletter' %}
-          <div class="newsletter-wrap wrapper">
-            <div class="section-header">
-              {% if block.settings.section_title != blank %}
-                <h3 class="h2">{{ block.settings.section_title | escape }}</h3>
-              {% endif %}
-              {% if block.settings.subheading != blank %}
-                <div class="rte">{{ block.settings.subheading }}</div>
-              {% endif %}
-            </div>
-
-            {% comment %} form starts {% endcomment %}
-            {% assign formId = 'Contact_' | append: section.id %}
-            {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
-              {% if form.posted_successfully? %}
-                <p class="form-message form-message--success" tabindex="-1" data-form-status>
-                  {{ 'general.newsletter_form.confirmation' | t }}
-                </p>
-              {% endif %}
-              <input type="hidden" name="contact[tags]" value="newsletter">
-              <div class="input-group {% if form.errors %} input-group--error{% endif %}">
-                <input type="email"
-                  name="contact[email]"
-                  id="{{ formId }}-email"
-                  class="input-group__field{% if form.errors %} input--error{% endif %}"
-                  value="{{ 'contact.form.email' | t }}"
-                  placeholder="{{ 'contact.form.email' | t | upcase }}"
-                  aria-label="Email Address"
-                  aria-required="true"
-                  autocorrect="off"
-                  autocapitalize="off"
-                  {% if form.errors %}
-                    aria-invalid="true"
-                    aria-describedby="{{ formId }}-email-error"
-                    data-form-status
-                  {% endif %}
-                  >
-                <button type="submit" class="btn" name="commit">
-                  Send
-                </button>
+          <div class="newsletter-wrap">
+            <div class="newsletter-contents">
+              <div class="section-header">
+                {% if block.settings.section_title != blank %}
+                  <h3>{{ block.settings.section_title | escape }}</h3>
+                {% endif %}
+                {% if block.settings.subheading != blank %}
+                  <div class="rte">{{ block.settings.subheading }}</div>
+                {% endif %}
               </div>
-              {% if form.errors contains 'email' %}
-                <span id="{{ formId }}-email-error" class="input-error-message">
-                  <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
-                  {% comment %}{% include 'icon-error' %}{% endcomment %}
-                  <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
-                </span>
-              {% endif %}
-            {% endform %}
+
+              {% comment %} form starts {% endcomment %}
+              {% assign formId = 'Newsletter_' | append: section.id %}
+              {% form 'customer', id: formId, novalidate: 'novalidate', class: 'newsletter-form form-single-field' %}
+                {% if form.posted_successfully? %}
+                  <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                    {{ 'general.newsletter_form.confirmation' | t }}
+                  </p>
+                {% endif %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                  <input type="email"
+                    name="contact[email]"
+                    id="{{ formId }}-email"
+                    class="input-group__field{% if form.errors %} input--error{% endif %}"
+                    placeholder="{{ 'contact.form.email' | t | upcase }}"
+                    aria-label="Email Address"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    {% if form.errors %}
+                      aria-invalid="true"
+                      aria-describedby="{{ formId }}-email-error"
+                      data-form-status
+                    {% endif %}
+                    >
+                  <button type="submit" class="btn" name="commit">
+                    Send
+                  </button>
+                </div>
+                {% if form.errors contains 'email' %}
+                  <span id="{{ formId }}-email-error" class="input-error-message">
+                    <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                    <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                  </span>
+                {% endif %}
+              {% endform %}
+            </div>
           </div>
-
-          {% comment %} 
-          {% form 'customer' %}
-            <div class="password">
-              <label for="email">Password</label>
-              <input type="email" name="contact[email]" />
-            </div>
-
-            <div class="submit">
-              <input type="submit" value="Sign up" />
-            </div>
-          {% endform %}
-          {% endcomment %}
       {% endcase %}
     </div>
   {% endfor %}
